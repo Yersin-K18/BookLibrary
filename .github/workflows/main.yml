@@ -1,16 +1,17 @@
-name: Deploy to FTP
 on: push
-
+name: 🚀 Deploy website on push
 jobs:
-  deploy:
+  web-deploy:
+    name: 🎉 Deploy
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Deploy to FTP
-      uses: peaceiris/actions-ftp-client@v2
+    - name: 🚚 Get latest code
+      uses: actions/checkout@main
+
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.3.3
       with:
-        host: win5206.site4now.net
+        server: win5206.site4now.net
         username: hoang3409-001
-        password: ${{ secrets.FTP_PASSWORD }}
-        remote-dir: /root/home/hoang3409-001/www/booklibrary
-        clean: true
+        password: ${{ secrets.ftp_password }}
+        server-dir: /root/home/hoang3409-001/www/booklibrary/

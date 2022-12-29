@@ -33,6 +33,6 @@ jobs:
         server: win5206.site4now.net
         username: hoang3409-001
         password: ${{ secrets.ftp_password }}
-        local-dir: /a/BookLibrary/_build/
+        local-dir: /a/BookLibrary/BookLibrary/_build/
         server-dir: /booklibrary/
         dangerous-clean-slate: true

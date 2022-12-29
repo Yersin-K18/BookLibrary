@@ -21,7 +21,7 @@ jobs:
       run: mkdir _build
       
     - name: Restore Packages
-      run: nuget restore EzRep.sln
+      run: nuget restore BookLibrary.sln
 
     - name: Build Solution
       run: |

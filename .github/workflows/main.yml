@@ -14,6 +14,6 @@ jobs:
         server: win5206.site4now.net
         username: hoang3409-001
         password: ${{ secrets.ftp_password }}
-        local-dir: dist
-        remote-dir: /root/home/hoang3409-001/www/booklibrary
+        local-dir: dist/
+        remote-dir: /root/home/hoang3409-001/www/booklibrary/
         clean: true

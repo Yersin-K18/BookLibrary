@@ -1,3 +1,6 @@
+env:
+  ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+
 on: push
 name: 🚀 Deploy website on push
 jobs:

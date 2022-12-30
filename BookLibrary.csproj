@@ -120,7 +120,6 @@
     <Compile Include="Controllers\AuthorDetailController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NewGridController.cs" />
-    <Compile Include="Controllers\Index_v1Controller.cs" />
     <Compile Include="Controllers\NewsListController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -319,7 +318,7 @@
     <Content Include="Views\NewsList\Index.cshtml" />
     <Content Include="Views\NewGrid\Index.cshtml" />
     <Content Include="Views\AuthorDetail\Index.cshtml" />
-    <Content Include="Views\Index_v1\Index.cshtml" />
+    <Content Include="Views\Home\Index_v1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

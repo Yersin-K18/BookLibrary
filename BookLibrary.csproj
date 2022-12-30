@@ -44,6 +44,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=3.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -54,6 +60,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -124,6 +132,43 @@
     <Compile Include="Controllers\NewsListController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Author.cs">
+      <DependentUpon>BookLibraryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BookLibraryModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookLibraryModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BookLibraryModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookLibraryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BookLibraryModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookLibraryModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CategoriesProduct.cs">
+      <DependentUpon>BookLibraryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Category.cs">
+      <DependentUpon>BookLibraryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CategoryModel.cs" />
+    <Compile Include="Models\Order.cs">
+      <DependentUpon>BookLibraryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OrderDetail.cs">
+      <DependentUpon>BookLibraryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Product.cs">
+      <DependentUpon>BookLibraryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User.cs">
+      <DependentUpon>BookLibraryModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -264,6 +309,16 @@
     <Content Include="fonts\icomoonbd7d.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\BookLibraryModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BookLibraryModel.edmx</DependentUpon>
+      <LastGenOutput>BookLibraryModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\BookLibraryModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BookLibraryModel.edmx</DependentUpon>
+      <LastGenOutput>BookLibraryModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\appear.js" />
     <Content Include="fonts\fontawesome-webfont3e6e.eot" />
     <Content Include="fonts\fontawesome-webfont3e6e.ttf" />
@@ -283,6 +338,13 @@
     <Content Include="Scripts\countdown.js" />
     <Content Include="Scripts\countTo.js" />
     <Content Include="Scripts\gmap3.js" />
+    <EntityDeploy Include="Models\BookLibraryModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BookLibraryModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\BookLibraryModel.edmx.diagram">
+      <DependentUpon>BookLibraryModel.edmx</DependentUpon>
+    </Content>
     <None Include="Properties\PublishProfiles\hoang3409-001-site1 - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\hoang3409-001-site1 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.6.1.intellisense.js" />
@@ -323,7 +385,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
@@ -351,6 +412,9 @@
     <Content Include="Scripts\bootstrap.bundle.js.map" />
     <Content Include="Scripts\jquery-3.6.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.6.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

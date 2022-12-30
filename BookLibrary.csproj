@@ -283,6 +283,8 @@
     <Content Include="Scripts\countdown.js" />
     <Content Include="Scripts\countTo.js" />
     <Content Include="Scripts\gmap3.js" />
+    <None Include="Properties\PublishProfiles\hoang3409-001-site1 - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\hoang3409-001-site1 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.6.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.1.js" />
     <Content Include="Scripts\jquery-3.6.1.min.js" />
@@ -313,8 +315,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\NewsList\Index.cshtml" />
     <Content Include="Views\NewGrid\Index.cshtml" />

@@ -319,6 +319,7 @@
     <Content Include="Views\NewGrid\Index.cshtml" />
     <Content Include="Views\AuthorDetail\Index.cshtml" />
     <Content Include="Views\Home\Index_v1.cshtml" />
+    <Content Include="Views\Home\Index_v2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

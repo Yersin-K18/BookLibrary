@@ -12,6 +12,9 @@ namespace BookLibrary.Controllers
         {
             return View();
         }
-
+        public ActionResult Index_v2()
+        {
+            return View();
+        }
     }
 }

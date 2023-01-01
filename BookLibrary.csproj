@@ -385,6 +385,7 @@
     <Content Include="Views\Home\Index_v1.cshtml" />
     <Content Include="Views\Home\Index_v2.cshtml" />
     <Content Include="Views\NewDetail\Index.cshtml" />
+    <Content Include="Views\Shared\NavigationMenuHome.cshtml" />
     <Content Include="Views\AboutUs\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>

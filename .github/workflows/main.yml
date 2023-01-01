@@ -7,41 +7,35 @@ on:
       - master
 name: 🚀 Deploy website on push
 jobs:
-  setup:
-    name: 📋 Setup
+  web-deploy:
+    name: 🎉 Deploy
     runs-on: windows-latest
     steps:
-    - uses: actions/checkout@v2
     - name: Setup MSBuild
       uses: microsoft/setup-msbuild@v1
+
     - name: Setup NuGet
-      uses: NuGet/setup-nuget@v1.1.1
-  build:
-    name: 🔨 Build
-    runs-on: windows-latest
-    needs: setup
-    steps:
+      uses: NuGet/setup-nuget@v1.0.2
+      
     - name: 🚚 Get latest code
-      uses: actions/checkout@v2
+      uses: actions/checkout@main
+
     - name: Create Build Directory
       run: mkdir _build
+      
     - name: Restore Packages
       run: nuget restore BookLibrary.sln
+
     - name: Build Solution
       run: |
-        "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Current\bin\msbuild.exe" BookLibrary.sln /nologo /nr:false /p:DeployOnBuild=false /p:DeployDefaultTarget=WebPublish /p:WebPublishMethod=FileSystem /p:DeleteExistingFiles=True /p:platform="Any CPU" /p:configuration="Release" /p:OutputPath="./_build"
-  deploy:
-    name: 📂 Deploy
-    runs-on: windows-latest
-    needs: build
-    steps:
-    - uses: actions/checkout@v2
+        msbuild.exe BookLibrary.sln /nologo /nr:false /p:DeployOnBuild=false /p:DeployDefaultTarget=WebPublish /p:WebPublishMethod=FileSystem /p:DeleteExistingFiles=True /p:platform="Any CPU" /p:configuration="Release" /p:OutputPath="./_build"
+    
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.3.3
       with:
         server: win5206.site4now.net
         username: hoang3409-001
         password: ${{ secrets.ftp_password }}
-        local-dir: /a/BookLibrary/_build/_publishedwebsites/booklibrary/
+        local-dir: /a/BookLibrary/BookLibrary/_build/_publishedwebsites/booklibrary/
         server-dir: /booklibrary/
         dangerous-clean-slate: true

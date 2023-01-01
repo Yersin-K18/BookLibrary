@@ -7,29 +7,33 @@ on:
       - master
 name: 🚀 Deploy website on push
 jobs:
-  web-deploy:
-    name: 🎉 Deploy
+  setup:
+    name: 📋 Setup
     runs-on: windows-latest
     steps:
     - name: Setup MSBuild
       uses: microsoft/setup-msbuild@v1
-
     - name: Setup NuGet
-      uses: NuGet/setup-nuget@v1.0.2
-      
+      uses: NuGet/setup-nuget@v1.1.1
+  build:
+    name: 🔨 Build
+    runs-on: windows-latest
+    needs: setup
+    steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@main
-
     - name: Create Build Directory
       run: mkdir _build
-      
     - name: Restore Packages
       run: nuget restore BookLibrary.sln
-
     - name: Build Solution
       run: |
         msbuild.exe BookLibrary.sln /nologo /nr:false /p:DeployOnBuild=false /p:DeployDefaultTarget=WebPublish /p:WebPublishMethod=FileSystem /p:DeleteExistingFiles=True /p:platform="Any CPU" /p:configuration="Release" /p:OutputPath="./_build"
-    
+  deploy:
+    name: 📂 Deploy
+    runs-on: windows-latest
+    needs: build
+    steps:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.3.3
       with:

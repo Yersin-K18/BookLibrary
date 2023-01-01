@@ -127,6 +127,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AuthorDetailController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NewDetailController.cs" />
     <Compile Include="Controllers\NewGridController.cs" />
     <Compile Include="Controllers\NewsListController.cs" />
     <Compile Include="Global.asax.cs">
@@ -382,6 +383,7 @@
     <Content Include="Views\AuthorDetail\Index.cshtml" />
     <Content Include="Views\Home\Index_v1.cshtml" />
     <Content Include="Views\Home\Index_v2.cshtml" />
+    <Content Include="Views\NewDetail\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

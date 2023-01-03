@@ -385,6 +385,8 @@
     <Content Include="Views\NewDetail\Index.cshtml" />
     <Content Include="Views\Shared\NavigationMenuHome.cshtml" />
     <Content Include="Views\AboutUs\Index.cshtml" />
+    <Content Include="Views\Shared\_AllCategory.cshtml" />
+    <Content Include="Views\Shared\_Layoutv2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

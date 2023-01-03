@@ -17,16 +17,6 @@
           <Property Name="Image" Type="nvarchar" MaxLength="500" />
           <Property Name="SocialLink" Type="nvarchar" MaxLength="500" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'db_a92489_booklibrary.dbo.CategoriesProducts' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="CategoriesProducts">
-          <Key>
-            <PropertyRef Name="CategoryId" />
-            <PropertyRef Name="ProductId" />
-          </Key>
-          <Property Name="CategoryId" Type="int" Nullable="false" />
-          <Property Name="ProductId" Type="int" Nullable="false" />
-        </EntityType>
         <EntityType Name="Category">
           <Key>
             <PropertyRef Name="id" />
@@ -52,7 +42,7 @@ warning 6002: The table/view 'db_a92489_booklibrary.dbo.CategoriesProducts' does
           <Property Name="id" Type="int" Nullable="false" />
           <Property Name="OrderId" Type="int" Nullable="false" />
           <Property Name="ProductId" Type="int" Nullable="false" />
-          <Property Name="UnitPrice" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="UnitPrice" Type="float" Nullable="false" />
           <Property Name="Quantity" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Product">
@@ -87,12 +77,6 @@ warning 6002: The table/view 'db_a92489_booklibrary.dbo.CategoriesProducts' does
           <EntitySet Name="OrderDetail" EntityType="Self.OrderDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="CategoriesProducts" EntityType="Self.CategoriesProducts" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [CategoriesProducts].[CategoryId] AS [CategoryId], 
-    [CategoriesProducts].[ProductId] AS [ProductId]
-    FROM [dbo].[CategoriesProducts] AS [CategoriesProducts]</DefiningQuery>
-          </EntitySet>
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
@@ -136,7 +120,7 @@ warning 6002: The table/view 'db_a92489_booklibrary.dbo.CategoriesProducts' does
           <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="OrderId" Type="Int32" Nullable="false" />
           <Property Name="ProductId" Type="Int32" Nullable="false" />
-          <Property Name="UnitPrice" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="UnitPrice" Type="Double" Nullable="false" />
           <Property Name="Quantity" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Product">
@@ -164,14 +148,6 @@ warning 6002: The table/view 'db_a92489_booklibrary.dbo.CategoriesProducts' does
           <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="MaSoThue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="CategoriesProduct">
-          <Key>
-            <PropertyRef Name="CategoryId" />
-            <PropertyRef Name="ProductId" />
-          </Key>
-          <Property Name="CategoryId" Type="Int32" Nullable="false" />
-          <Property Name="ProductId" Type="Int32" Nullable="false" />
-        </EntityType>
         <EntityContainer Name="BookLibraryEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Authors" EntityType="Self.Author" />
           <EntitySet Name="Categories" EntityType="Self.Category" />
@@ -179,7 +155,6 @@ warning 6002: The table/view 'db_a92489_booklibrary.dbo.CategoriesProducts' does
           <EntitySet Name="OrderDetails" EntityType="Self.OrderDetail" />
           <EntitySet Name="Products" EntityType="Self.Product" />
           <EntitySet Name="Users" EntityType="Self.User" />
-          <EntitySet Name="CategoriesProducts" EntityType="Self.CategoriesProduct" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -255,14 +230,6 @@ warning 6002: The table/view 'db_a92489_booklibrary.dbo.CategoriesProducts' does
                 <ScalarProperty Name="Sdt" ColumnName="Sdt" />
                 <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
                 <ScalarProperty Name="MaSoThue" ColumnName="MaSoThue" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="CategoriesProducts">
-            <EntityTypeMapping TypeName="BookLibraryModel.CategoriesProduct">
-              <MappingFragment StoreEntitySet="CategoriesProducts">
-                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
-                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

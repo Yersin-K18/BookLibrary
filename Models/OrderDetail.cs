@@ -17,7 +17,7 @@ namespace BookLibrary.Models
         public int id { get; set; }
         public int OrderId { get; set; }
         public int ProductId { get; set; }
-        public decimal UnitPrice { get; set; }
+        public double UnitPrice { get; set; }
         public int Quantity { get; set; }
     }
 }

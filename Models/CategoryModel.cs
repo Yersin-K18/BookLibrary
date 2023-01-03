@@ -7,7 +7,7 @@ namespace BookLibrary.Models
     {
         static BookLibraryEntities database = new BookLibraryEntities();
 
-        public List<Category> GetCategories()
+        public static List<Category> GetCategories()
         {
             return database.Categories.ToList();
         }

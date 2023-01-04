@@ -132,6 +132,7 @@
     <Compile Include="Controllers\NewDetailController.cs" />
     <Compile Include="Controllers\NewGridController.cs" />
     <Compile Include="Controllers\NewsListController.cs" />
+    <Compile Include="Controllers\ProductDetailController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -387,6 +388,8 @@
     <Content Include="Views\AboutUs\Index.cshtml" />
     <Content Include="Views\Shared\_AllCategory.cshtml" />
     <Content Include="Views\Shared\_Layoutv2.cshtml" />
+    <Content Include="Views\AboutUs\Index.cshtml" />
+    <Content Include="Views\ProductDetail\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -20,7 +20,6 @@ namespace BookLibrary.Controllers
         {
             return View();
         }
-
         public ActionResult GotoIndex()
         {
             return View("Index");

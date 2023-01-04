@@ -16,6 +16,10 @@ namespace BookLibrary.Controllers
         {
             return View();
         }
+        public ActionResult Index_v3()
+        {
+            return View();
+        }
 
         public ActionResult GotoIndex()
         {

@@ -15,6 +15,12 @@ namespace BookLibrary.Controllers
             BookLibraryEntities db = new BookLibraryEntities(); //khai báo sd entities
             return PartialView("_AllCategory", db.Categories); //trả về view một model
         }
+        [ChildActionOnly]
+        public ActionResult menu_Cart()
+        {
+            BookLibraryEntities db = new BookLibraryEntities();
+            return PartialView("_Cart", db.Products);
+        }
         public ActionResult Index_v1()
         {
             return View();

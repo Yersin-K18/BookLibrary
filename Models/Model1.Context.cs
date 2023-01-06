@@ -13,10 +13,10 @@ namespace BookLibrary.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class BookLibraryEntities : DbContext
+    public partial class db_a92489_booklibraryEntities : DbContext
     {
-        public BookLibraryEntities()
-            : base("name=BookLibraryEntities")
+        public db_a92489_booklibraryEntities()
+            : base("name=db_a92489_booklibraryEntities")
         {
         }
     

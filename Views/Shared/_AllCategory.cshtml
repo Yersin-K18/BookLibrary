@@ -6,7 +6,7 @@
             foreach (var listBook in Model)
             {
                 <li role="presentation">
-                    <a href="#" aria-controls="#" role="tab" data-toggle="tab">@listBook.Name</a>
+                    <a href="#@listBook.Tag" aria-controls="@listBook.Tag" role="tab" data-toggle="tab">@listBook.Name</a>
                 </li>
             }
         }

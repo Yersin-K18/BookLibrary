@@ -12,13 +12,13 @@ namespace BookLibrary.Controllers
         [ChildActionOnly] // Đánh giấu cho biết no là action con, khi chạy thì nó chỉ gọi đúng cái temple này
         public ActionResult menu_Category()
         {
-            BookLibraryEntities db = new BookLibraryEntities(); //khai báo sd entities
+            db_a92489_booklibraryEntities db = new db_a92489_booklibraryEntities(); //khai báo sd entities
             return PartialView("_AllCategory", db.Categories); //trả về view một model
         }
         [ChildActionOnly]
         public ActionResult menu_Cart()
         {
-            BookLibraryEntities db = new BookLibraryEntities();
+            db_a92489_booklibraryEntities db = new db_a92489_booklibraryEntities();
             return PartialView("_Cart", db.Products);
         }
         public ActionResult Index_v1()

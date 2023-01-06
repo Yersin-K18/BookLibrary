@@ -5,7 +5,7 @@ namespace BookLibrary.Models
 {
     public class CategoryModel
     {
-        static BookLibraryEntities database = new BookLibraryEntities();
+        static db_a92489_booklibraryEntities database = new db_a92489_booklibraryEntities();
 
         public static List<Category> GetCategories()
         {

@@ -127,6 +127,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AboutUsController.cs" />
+    <Compile Include="Controllers\AuthorController.cs" />
     <Compile Include="Controllers\AuthorDetailController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NewDetailController.cs" />
@@ -393,6 +394,7 @@
     <Content Include="Views\AboutUs\Index.cshtml" />
     <Content Include="Views\ProductDetail\Index.cshtml" />
     <Content Include="Views\Shared\_Cart.cshtml" />
+    <Content Include="Views\Author\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

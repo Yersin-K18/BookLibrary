@@ -129,6 +129,8 @@
     <Compile Include="Controllers\AboutUsController.cs" />
     <Compile Include="Controllers\AuthorController.cs" />
     <Compile Include="Controllers\AuthorDetailController.cs" />
+    <Compile Include="Controllers\ComingSoonController.cs" />
+    <Compile Include="Controllers\ContactUsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NewDetailController.cs" />
     <Compile Include="Controllers\NewGridController.cs" />
@@ -395,6 +397,8 @@
     <Content Include="Views\ProductDetail\Index.cshtml" />
     <Content Include="Views\Shared\_Cart.cshtml" />
     <Content Include="Views\Author\Index.cshtml" />
+    <Content Include="Views\ComingSoon\Index.cshtml" />
+    <Content Include="Views\ContactUs\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

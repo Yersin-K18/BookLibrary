@@ -101,8 +101,8 @@
                                                     <li><a href="authordetail.html">Author Detail</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="products.html">Best Selling</a></li>
-                                            <li><a href="products.html">Weekly Sale</a></li>
+                                            <li>@Html.ActionLink("Best Selling", "Index", "Product")</li>
+                                            <li>@Html.ActionLink("Weekly Sale", "Index", "Product")</li>
                                             <li class="menu-item-has-children">
                                                 <a href="javascript:void(0);">Latest News</a>
                                                 <ul class="sub-menu">
@@ -118,7 +118,7 @@
                                                     <li class="menu-item-has-children">
                                                         <a href="aboutus.html">Products</a>
                                                         <ul class="sub-menu">
-                                                            <li><a href="products.html">Products</a></li>
+                                                            <li>@Html.ActionLink("Product", "Index", "Product")</li>
                                                             <li><a href="/ProductDetail/Index">Product Detail</a></li>
                                                         </ul>
                                                     </li>

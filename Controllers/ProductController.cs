@@ -19,6 +19,8 @@ namespace BookLibrary.Controllers
         public ActionResult AllCategory()
         {
             return PartialView("_getAllCategory", db.Categories);
-        }        
+        }
+
+        public ActionResult sachgiaokhoa() => PartialView("_SachGiaoKhoa", db.Products);
     }
 }

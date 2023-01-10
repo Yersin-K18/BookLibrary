@@ -14,7 +14,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BookLibrary</RootNamespace>
     <AssemblyName>BookLibrary</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -67,11 +68,7 @@
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
@@ -133,6 +130,7 @@
     <Compile Include="Controllers\ComingSoonController.cs" />
     <Compile Include="Controllers\ContactUsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\NewDetailController.cs" />
     <Compile Include="Controllers\NewGridController.cs" />
     <Compile Include="Controllers\NewsListController.cs" />
@@ -200,6 +198,7 @@
     <Content Include="Content\css\font-awesome.min.css" />
     <Content Include="Content\css\icomoon.css" />
     <Content Include="Content\css\jquery-ui.css" />
+    <Content Include="Content\css\login-register.css" />
     <Content Include="Content\css\main.css" />
     <Content Include="Content\css\normalize.css" />
     <Content Include="Content\css\owl.carousel.css" />
@@ -277,6 +276,7 @@
     <Content Include="Content\Images\instagram\img-07.jpg" />
     <Content Include="Content\Images\instagram\img-08.jpg" />
     <Content Include="Content\Images\instagram\img-09.jpg" />
+    <Content Include="Content\Images\login-register-bg\reading-book.jpg" />
     <Content Include="Content\Images\logo-02.png" />
     <Content Include="Content\Images\logo.png" />
     <Content Include="Content\Images\owl.video.play.png" />
@@ -404,6 +404,7 @@
     <Content Include="Views\ComingSoon\Index.cshtml" />
     <Content Include="Views\ContactUs\Index.cshtml" />
     <Content Include="Views\Admin\DangNhap.cshtml" />
+    <Content Include="Views\Login\LoginForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -204,6 +204,7 @@
     <Content Include="Content\css\normalize.css" />
     <Content Include="Content\css\owl.carousel.css" />
     <Content Include="Content\css\responsive.css" />
+    <Content Include="Content\css\Login.css" />
     <Content Include="Content\css\transitions.css" />
     <Content Include="Content\Images\author\imag-01.jpg" />
     <Content Include="Content\Images\author\imag-02.jpg" />
@@ -364,6 +365,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\jquery.vide.min.js" />
+    <Content Include="Scripts\Login.js" />
     <Content Include="Scripts\main.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\owl.carousel.min.js" />

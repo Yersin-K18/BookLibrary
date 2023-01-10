@@ -172,6 +172,7 @@
     <Compile Include="Models\Product.cs">
       <DependentUpon>BookLibraryModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ProductsModel.cs" />
     <Compile Include="Models\User.cs">
       <DependentUpon>BookLibraryModel.tt</DependentUpon>
     </Compile>
@@ -406,6 +407,8 @@
     <Content Include="Views\ComingSoon\Index.cshtml" />
     <Content Include="Views\ContactUs\Index.cshtml" />
     <Content Include="Views\Admin\DangNhap.cshtml" />
+    <Content Include="Views\Shared\_listBestSelling.cshtml" />
+    <Content Include="Views\Product\_getAllCategory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

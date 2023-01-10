@@ -5,6 +5,7 @@ namespace BookLibrary.Controllers
 {
     public class HomeController : Controller
     {
+        BookLibraryEntities db = new BookLibraryEntities();
         public ActionResult Index()
         {
             return View();
@@ -20,6 +21,12 @@ namespace BookLibrary.Controllers
         {
             BookLibraryEntities db = new BookLibraryEntities();
             return PartialView("_Cart", db.Products);
+        }
+        [ChildActionOnly]
+        public ActionResult get_listBestSelling()
+        {
+            
+            return PartialView("_listBestSelling",db.Products);
         }
         public ActionResult Index_v1()
         {

@@ -16,5 +16,6 @@ namespace BookLibrary.Models
     {
         public int id { get; set; }
         public string Name { get; set; }
+        public string Tag { get; set; }
     }
 }

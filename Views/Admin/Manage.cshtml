@@ -1,0 +1,39 @@
+﻿
+@{
+    Layout = null;
+    List<string> database = new List<string>()
+    {
+        "Authors",
+        "Categories",
+        "Orders",
+        "OrderDetails",
+        "Products",
+        "Users"
+    };
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Manage</title>
+</head>
+<body>
+    <div> 
+        <table>
+            <tr>
+                <th>Tên bảng</th>
+                <th></th>
+            </tr>
+            @foreach (var item in database)
+            {
+            <tr>
+                <th>@item</th>
+                <th>@Html.ActionLink("Edit", "Index", "Admin" + @item)</th>
+            </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>

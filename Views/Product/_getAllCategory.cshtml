@@ -9,7 +9,7 @@
         <ul>
             @foreach (var item in Model)
             {
-                <li><a href="javascript:void(0);"><span>@item.Name</span><em>none</em></a></li>
+                <li><a href="@Url.Action(@item.Tag, "Product")"><span>@item.Name</span><em>none</em></a></li>
             }
             <li><a href="javascript:void(0);"><span>Xem Thêm</span></a></li>
         </ul>

@@ -439,6 +439,11 @@
     <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\ComingSoon\Index.cshtml" />
     <Content Include="Views\ContactUs\Index.cshtml" />
+    <Content Include="Views\Admin\DangNhap.cshtml" />
+    <Content Include="Views\Shared\_listBestSelling.cshtml" />
+    <Content Include="Views\Product\_getAllCategory.cshtml" />
+    <Content Include="Views\Shared\_LayoutProducts.cshtml" />
+    <Content Include="Views\Product\_SachGiaoKhoa.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Shared\_listBestSelling.cshtml" />
     <Content Include="Views\Product\_getAllCategory.cshtml" />

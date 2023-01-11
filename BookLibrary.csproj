@@ -127,7 +127,12 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AboutUsController.cs" />
+    <Compile Include="Controllers\Admin\AdminAuthorsController.cs" />
+    <Compile Include="Controllers\Admin\AdminCategoriesController.cs" />
     <Compile Include="Controllers\Admin\AdminController.cs" />
+    <Compile Include="Controllers\Admin\AdminOrderDetailsController.cs" />
+    <Compile Include="Controllers\Admin\AdminOrdersController.cs" />
+    <Compile Include="Controllers\Admin\AdminProductsController.cs" />
     <Compile Include="Controllers\Admin\AdminUsersController.cs" />
     <Compile Include="Controllers\AuthorController.cs" />
     <Compile Include="Controllers\AuthorDetailController.cs" />
@@ -416,6 +421,31 @@
     <Content Include="Views\AdminUsers\Details.cshtml" />
     <Content Include="Views\AdminUsers\Edit.cshtml" />
     <Content Include="Views\AdminUsers\Index.cshtml" />
+    <Content Include="Views\AdminAuthors\Create.cshtml" />
+    <Content Include="Views\AdminAuthors\Delete.cshtml" />
+    <Content Include="Views\AdminAuthors\Details.cshtml" />
+    <Content Include="Views\AdminAuthors\Edit.cshtml" />
+    <Content Include="Views\AdminAuthors\Index.cshtml" />
+    <Content Include="Views\AdminCategories\Create.cshtml" />
+    <Content Include="Views\AdminCategories\Delete.cshtml" />
+    <Content Include="Views\AdminCategories\Details.cshtml" />
+    <Content Include="Views\AdminCategories\Edit.cshtml" />
+    <Content Include="Views\AdminCategories\Index.cshtml" />
+    <Content Include="Views\AdminOrders\Create.cshtml" />
+    <Content Include="Views\AdminOrders\Delete.cshtml" />
+    <Content Include="Views\AdminOrders\Details.cshtml" />
+    <Content Include="Views\AdminOrders\Edit.cshtml" />
+    <Content Include="Views\AdminOrders\Index.cshtml" />
+    <Content Include="Views\AdminOrderDetails\Create.cshtml" />
+    <Content Include="Views\AdminOrderDetails\Delete.cshtml" />
+    <Content Include="Views\AdminOrderDetails\Details.cshtml" />
+    <Content Include="Views\AdminOrderDetails\Edit.cshtml" />
+    <Content Include="Views\AdminOrderDetails\Index.cshtml" />
+    <Content Include="Views\AdminProducts\Create.cshtml" />
+    <Content Include="Views\AdminProducts\Delete.cshtml" />
+    <Content Include="Views\AdminProducts\Details.cshtml" />
+    <Content Include="Views\AdminProducts\Edit.cshtml" />
+    <Content Include="Views\AdminProducts\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -127,7 +127,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AboutUsController.cs" />
-    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\Admin\AdminController.cs" />
+    <Compile Include="Controllers\Admin\AdminUsersController.cs" />
     <Compile Include="Controllers\AuthorController.cs" />
     <Compile Include="Controllers\AuthorDetailController.cs" />
     <Compile Include="Controllers\ComingSoonController.cs" />
@@ -406,9 +407,15 @@
     <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\ComingSoon\Index.cshtml" />
     <Content Include="Views\ContactUs\Index.cshtml" />
-    <Content Include="Views\Admin\DangNhap.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Shared\_listBestSelling.cshtml" />
     <Content Include="Views\Product\_getAllCategory.cshtml" />
+    <Content Include="Views\Admin\Manage.cshtml" />
+    <Content Include="Views\AdminUsers\Create.cshtml" />
+    <Content Include="Views\AdminUsers\Delete.cshtml" />
+    <Content Include="Views\AdminUsers\Details.cshtml" />
+    <Content Include="Views\AdminUsers\Edit.cshtml" />
+    <Content Include="Views\AdminUsers\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

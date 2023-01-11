@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using BookLibrary.Models;
+using System.Web.Mvc;
 
 namespace BookLibrary.Controllers
 {
@@ -13,20 +14,22 @@ namespace BookLibrary.Controllers
         [HttpPost]
         public ActionResult Index(string username, string password)
         {
-            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            User user = UserModel.VerifyCredentials(username, password);
+            if (user == null)
             {
-                ViewBag.Message = "Must input data!";
+                ViewBag.Error = "Invalid email or password";
                 return View();
             }
-            if (username == "admin" && password == "1")
-            {
-                return View("Manage");
-            }
-            return View();
+            Session["user_id"] = user.id;
+            Session["user_name"] = user.username;
+            return View("Manage");
         }
 
         public ActionResult Manage()
         {
+            int? userId = (int?)Session["user_id"];
+            string userName = (string)Session["user_name"];
+            if (userId is null || string.IsNullOrWhiteSpace(userName)) return View("Index");
             return View();
         }
     }

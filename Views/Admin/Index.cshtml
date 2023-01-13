@@ -27,7 +27,7 @@
                 <h5>Đăng Nhập</h5>
                 @Html.TextBox("Username", null, new { placeholder = "User", type = "text" })
                 <h5>Password</h5>
-                @Html.TextBox("Password", null, new { placeholder = "Password", type = "text" })
+                @Html.TextBox("Password", null, new { placeholder = "Password", type = "password" })
                 <button type="submit" class="">Đăng Nhập</button>
             }
             @if (ViewBag.Message != null)

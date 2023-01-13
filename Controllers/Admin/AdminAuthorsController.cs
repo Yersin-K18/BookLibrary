@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using BookLibrary.Models;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using BookLibrary.Models;
 
 namespace BookLibrary.Controllers.Admin
 {
@@ -17,6 +13,9 @@ namespace BookLibrary.Controllers.Admin
         // GET: AdminAuthors
         public ActionResult Index()
         {
+            int? userId = (int?)Session["user_id"];
+            string userName = (string)Session["user_name"];
+            if (userId is null || string.IsNullOrWhiteSpace(userName)) return View("Index");
             return View(db.Authors.ToList());
         }
 

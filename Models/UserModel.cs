@@ -11,16 +11,18 @@ namespace BookLibrary.Models
             {
                 return null;
             }
+
             var user = db.Users
                          .Where(item => item.username == username)
                          .First();
-            if (user != null)
+
+            if (user == null) return null;
+
+            if (user.username == username && user.password == password)
             {
-                if (user.username == username && user.password == password)
-                {
-                    return user;
-                }
+                return user;
             }
+
             return null;
         }
     }

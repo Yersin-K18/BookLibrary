@@ -13,6 +13,9 @@ namespace BookLibrary.Controllers.Admin
         // GET: AdminUsers
         public ActionResult Index()
         {
+            int? userId = (int?)Session["user_id"];
+            string userName = (string)Session["user_name"];
+            if (userId is null || string.IsNullOrWhiteSpace(userName)) return View("Index");
             return View(db.Users.ToList());
         }
 

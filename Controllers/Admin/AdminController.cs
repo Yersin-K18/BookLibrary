@@ -8,6 +8,9 @@ namespace BookLibrary.Controllers
         // GET: Admin
         public ActionResult Index()
         {
+            int? userId = (int?)Session["user_id"];
+            string userName = (string)Session["user_name"];
+            if (userId != null) return View("Manage");
             return View();
         }
 

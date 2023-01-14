@@ -444,7 +444,6 @@
     <Content Include="Views\Shared\_LayoutProducts.cshtml" />
     <Content Include="Views\Product\_SachGiaoKhoa.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
-    <Content Include="Views\Shared\_listBestSelling.cshtml" />
     <Content Include="Views\Product\_getAllCategory.cshtml" />
     <Content Include="Views\Admin\Manage.cshtml" />
     <Content Include="Views\AdminUsers\Create.cshtml" />

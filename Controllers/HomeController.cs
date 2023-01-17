@@ -25,8 +25,8 @@ namespace BookLibrary.Controllers
         [ChildActionOnly]
         public ActionResult get_listBestSelling()
         {
-            
-            return PartialView("_listBestSelling",db.Products);
+
+            return PartialView("_listBestSelling", db.Products);
         }
         public ActionResult Index_v1()
         {
@@ -43,6 +43,17 @@ namespace BookLibrary.Controllers
         public ActionResult GotoIndex()
         {
             return View("Index");
+        }
+
+        [ChildActionOnly]
+        public ActionResult UserLogin()
+        {
+            if (Session["User"] != null)
+            {
+                ViewBag.UserName = ((User)Session["User"]).username;
+            }
+
+            return PartialView("_UserLogin");
         }
     }
 }

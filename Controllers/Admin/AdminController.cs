@@ -8,9 +8,8 @@ namespace BookLibrary.Controllers
         // GET: Admin
         public ActionResult Index()
         {
-            int? userId = (int?)Session["user_id"];
-            string userName = (string)Session["user_name"];
-            if (userId != null) return View("Manage");
+            if (Session["user"] != null && ((User)Session["user"]).id == 0) return View("Manage");
+
             return View();
         }
 
@@ -23,16 +22,16 @@ namespace BookLibrary.Controllers
                 ViewBag.Error = "Invalid email or password";
                 return View();
             }
-            Session["user_id"] = user.id;
-            Session["user_name"] = user.username;
+            Session["user"] = user;
             return View("Manage");
         }
 
         public ActionResult Manage()
         {
-            int? userId = (int?)Session["user_id"];
-            string userName = (string)Session["user_name"];
-            if (userId is null || string.IsNullOrWhiteSpace(userName)) return View("Index");
+            if (Session["user"] is null) return View("Index");
+
+            int userId = ((User)Session["user"]).id;
+            string userName = ((User)Session["user"]).username;
             return View();
         }
     }

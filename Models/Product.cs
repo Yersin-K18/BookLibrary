@@ -14,11 +14,11 @@ namespace BookLibrary.Models
     
     public partial class Product
     {
-        public string id { get; set; }
+        public int ID { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public double Price { get; set; }
-        public string Categories { get; set; }
+        public Nullable<double> Price { get; set; }
+        public Nullable<int> CategorieID { get; set; }
         public string Language { get; set; }
         public string Image { get; set; }
     }

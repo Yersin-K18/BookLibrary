@@ -476,6 +476,7 @@
     <Content Include="Views\AdminProducts\Details.cshtml" />
     <Content Include="Views\AdminProducts\Edit.cshtml" />
     <Content Include="Views\AdminProducts\Index.cshtml" />
+    <Content Include="Views\Shared\_UserLogin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

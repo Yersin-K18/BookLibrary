@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-namespace BookLibrary.Models
+﻿namespace BookLibrary.Models
 {
     public class ProductsModel
     {

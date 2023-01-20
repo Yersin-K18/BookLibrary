@@ -1,4 +1,7 @@
-﻿namespace BookLibrary.Controllers
+﻿using BookLibrary.Models;
+using System.Web.Mvc;
+
+namespace BookLibrary.Controllers
 {
     public class HomeController : Controller
     {

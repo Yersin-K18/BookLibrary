@@ -236,11 +236,11 @@
     <Content Include="Content\css\icomoon.css" />
     <Content Include="Content\css\jquery-ui.css" />
     <Content Include="Content\css\login.css" />
+    <Content Include="Content\css\LoginAdmin.css" />
     <Content Include="Content\css\main.css" />
     <Content Include="Content\css\normalize.css" />
     <Content Include="Content\css\owl.carousel.css" />
     <Content Include="Content\css\responsive.css" />
-    <Content Include="Content\css\LoginAdmin.css" />
     <Content Include="Content\css\transitions.css" />
     <Content Include="Content\Images\author\imag-01.jpg" />
     <Content Include="Content\Images\author\imag-02.jpg" />

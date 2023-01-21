@@ -198,7 +198,7 @@
     <Content Include="Content\css\font-awesome.min.css" />
     <Content Include="Content\css\icomoon.css" />
     <Content Include="Content\css\jquery-ui.css" />
-    <Content Include="Content\css\login-register.css" />
+    <Content Include="Content\css\login.css" />
     <Content Include="Content\css\main.css" />
     <Content Include="Content\css\normalize.css" />
     <Content Include="Content\css\owl.carousel.css" />

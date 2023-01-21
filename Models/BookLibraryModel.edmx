@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="BookLibraryModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="BookLibraryModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Author">
           <Key>
             <PropertyRef Name="id" />
@@ -13,7 +13,7 @@
           <Property Name="Name" Type="nvarchar" MaxLength="50" />
           <Property Name="Nickname" Type="nvarchar" MaxLength="50" />
           <Property Name="BooksPublished" Type="int" Nullable="false" />
-          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="Description" Type="nvarchar" MaxLength="4000" />
           <Property Name="Image" Type="nvarchar" MaxLength="500" />
           <Property Name="SocialLink" Type="nvarchar" MaxLength="500" />
         </EntityType>
@@ -23,6 +23,7 @@
           </Key>
           <Property Name="id" Type="int" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Tag" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="Order">
           <Key>
@@ -47,15 +48,15 @@
         </EntityType>
         <EntityType Name="Product">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="ID" />
           </Key>
-          <Property Name="id" Type="nchar" MaxLength="10" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Description" Type="nvarchar" MaxLength="500" />
-          <Property Name="Price" Type="float" Nullable="false" />
-          <Property Name="Categories" Type="nvarchar" MaxLength="500" />
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Price" Type="float" />
+          <Property Name="CategorieID" Type="int" />
           <Property Name="Language" Type="nvarchar" MaxLength="50" />
-          <Property Name="Image" Type="nvarchar" MaxLength="500" />
+          <Property Name="Image" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -78,8 +79,7 @@
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="BookLibraryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -91,7 +91,7 @@
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Nickname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="BooksPublished" Type="Int32" Nullable="false" />
-          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
           <Property Name="Image" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="SocialLink" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
         </EntityType>
@@ -101,6 +101,7 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Tag" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Order">
           <Key>
@@ -123,18 +124,6 @@
           <Property Name="UnitPrice" Type="Double" Nullable="false" />
           <Property Name="Quantity" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityType Name="Product">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="Price" Type="Double" Nullable="false" />
-          <Property Name="Categories" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="Language" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Image" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-        </EntityType>
         <EntityType Name="User">
           <Key>
             <PropertyRef Name="id" />
@@ -153,9 +142,21 @@
           <EntitySet Name="Categories" EntityType="Self.Category" />
           <EntitySet Name="Orders" EntityType="Self.Order" />
           <EntitySet Name="OrderDetails" EntityType="Self.OrderDetail" />
-          <EntitySet Name="Products" EntityType="Self.Product" />
           <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="Products" EntityType="BookLibraryModel.Product" />
         </EntityContainer>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Double" />
+          <Property Name="CategorieID" Type="Int32" />
+          <Property Name="Language" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -178,6 +179,7 @@
           <EntitySetMapping Name="Categories">
             <EntityTypeMapping TypeName="BookLibraryModel.Category">
               <MappingFragment StoreEntitySet="Category">
+                <ScalarProperty Name="Tag" ColumnName="Tag" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
               </MappingFragment>
@@ -206,19 +208,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Products">
-            <EntityTypeMapping TypeName="BookLibraryModel.Product">
-              <MappingFragment StoreEntitySet="Product">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="Categories" ColumnName="Categories" />
-                <ScalarProperty Name="Language" ColumnName="Language" />
-                <ScalarProperty Name="Image" ColumnName="Image" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="BookLibraryModel.User">
               <MappingFragment StoreEntitySet="User">
@@ -230,6 +219,19 @@
                 <ScalarProperty Name="Sdt" ColumnName="Sdt" />
                 <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
                 <ScalarProperty Name="MaSoThue" ColumnName="MaSoThue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="BookLibraryModel.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Language" ColumnName="Language" />
+                <ScalarProperty Name="CategorieID" ColumnName="CategorieID" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

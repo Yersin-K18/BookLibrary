@@ -9,8 +9,8 @@
         <EntityTypeShape EntityType="BookLibraryModel.Category" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="BookLibraryModel.Order" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="BookLibraryModel.OrderDetail" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="BookLibraryModel.Product" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="BookLibraryModel.User" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookLibraryModel.Product" Width="1.5" PointX="5.125" PointY="3.875" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

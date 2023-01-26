@@ -12,13 +12,24 @@ namespace BookLibrary.Models
                 return null;
             }
 
-            var user = db.Users
-                         .Where(item => item.username == username)
-                         .First();
+            User user;
+
+            if (username.IndexOf("@") == -1)
+            {
+                user = db.Users
+                        .Where(item => item.username == username)
+                        .First();
+            }
+            else
+            {
+                user = db.Users
+                        .Where(item => item.Email == username)
+                        .First();
+            }
 
             if (user == null) return null;
 
-            if (user.username == username && user.password == password)
+            if (user.password == password)
             {
                 return user;
             }

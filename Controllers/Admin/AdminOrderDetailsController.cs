@@ -13,9 +13,8 @@ namespace BookLibrary.Controllers.Admin
         // GET: AdminOrderDetails
         public ActionResult Index()
         {
-            int? userId = (int?)Session["user_id"];
-            string userName = (string)Session["user_name"];
-            if (userId is null || string.IsNullOrWhiteSpace(userName)) return View("Index");
+            if (Session["user"] is null || string.IsNullOrWhiteSpace(((User)Session["user"]).username))
+                return RedirectToAction("Index", "Home");
             return View(db.OrderDetails.ToList());
         }
 

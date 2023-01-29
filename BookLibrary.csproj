@@ -182,6 +182,7 @@
     <Compile Include="Models\Author.cs">
       <DependentUpon>BookLibraryModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\AuthorModel.cs" />
     <Compile Include="Models\BookLibraryModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -489,6 +490,7 @@
     <Content Include="Views\AdminProducts\Edit.cshtml" />
     <Content Include="Views\AdminProducts\Index.cshtml" />
     <Content Include="Views\Shared\_UserLogin.cshtml" />
+    <Content Include="Views\Shared\_TopAuthors.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

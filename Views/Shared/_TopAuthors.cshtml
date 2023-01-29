@@ -1,0 +1,35 @@
+﻿@{ 
+    var list = BookLibrary.Models.AuthorModel.TopAuthors(3);
+}
+
+<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+    <div class="tg-footercol tg-widget tg-widgettopsellingauthors">
+        <div class="tg-widgettitle">
+            <h3>Top Selling Authors</h3>
+        </div>
+        <div class="tg-widgetcontent">
+            <ul>
+                @foreach (var item in list)
+                {
+                <li>
+                    <figure>
+                        <a href="javascript:void(0);">
+                            @if (item.Image is null)
+                            {
+                                <img src="/Content/images/author/imag-10.jpg" alt="description">
+                            } else
+                            {
+                                <img src="@item.Image" alt="description" height="70" width="70">
+                            }
+                        </a>
+                    </figure>
+                    <div class="tg-authornamebooks">
+                        <h4><a href="javascript:void(0);">@item.Name</a></h4>
+                        <p>@item.BooksPublished Published Books</p>
+                    </div>
+                </li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>

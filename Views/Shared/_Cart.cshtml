@@ -1,48 +1,66 @@
-﻿@model IEnumerable<BookLibrary.Models.Product>
+﻿@using BookLibrary.Models
+@model List<Cart>
+    @{ 
+        List<Cart> cart = Session["Cart"] as List<Cart>;
+        if (cart == null)
+        {
+            cart = new List<Cart>();
+        }
+    }
+<div class="dropdown tg-themedropdown tg-minicartdropdown">
+    <a href="javascript:void(0);" id="tg-minicart" class="tg-btnthemedropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="tg-themebadge">@ViewBag.TotalQuantity</span>
+        <i class="icon-cart"></i>
+        
+            @if (Session["Cart"] == null)
+            {
+                <span>@ViewBag.TotalPrice VNĐ</span>
+            }
+            else
+            {
+                <span>@String.Format("{0:0,0}", ViewBag.TotalPrice) VNĐ</span>
+            }
+           
 
-<div class="dropdown-menu tg-themedropdownmenu" aria-labelledby="tg-minicart">
-    <div class="tg-minicartbody">
-        <div class="tg-minicarproduct">
-            <figure>
-                <img src="/Content/Images/products/img-01.jpg" alt="image description">
+    </a>
+    <div class="dropdown-menu tg-themedropdownmenu" aria-labelledby="tg-minicart">
+        @if (Session["Cart"] == null)
+        {
+            <h6>GIỎ HÀNG RỖNG !</h6>
+        }
+        else
+        {
+            
+            <div class="tg-minicartbody">
 
-            </figure>
-            <div class="tg-minicarproductdata">
-                <h5><a href="javascript:void(0);">Our State Fair Is A Great Function</a></h5>
-                <h6><a href="javascript:void(0);">$ 12.15</a></h6>
+                @foreach (var item in cart)
+                {
+                    <div class="tg-minicarproduct">
+                        <figure>
+                            <img src="/Content/Images/products/@item.bImage" alt="image description">
+
+                        </figure>
+                        <div class="tg-minicarproductdata">
+                            <h5><a href="javascript:void(0);">@item.bName</a></h5>
+                            <h6><a href="javascript:void(0);">@String.Format("{0:0,0}", item.bPrice) VNĐ</a></h6>
+                            <p>Số lượng : @item.bQuantity</p>
+                        </div>
+                    </div>
+                }
+
             </div>
-        </div>
-        <div class="tg-minicarproduct">
-            <figure>
-                <img src="/Content/Images/products/img-02.jpg" alt="image description">
-
-            </figure>
-            <div class="tg-minicarproductdata">
-                <h5><a href="javascript:void(0);">Bring Me To Light</a></h5>
-                <h6><a href="javascript:void(0);">$ 12.15</a></h6>
+            <div class="tg-minicartfoot">
+                <a class="tg-btnemptycart" href="@Url.Action("ClearCart","ShoppingCart")">
+                    <i class="fa fa-trash-o"></i>
+                    <span>Xoá Giỏ Hàng</span>
+                </a>
+                <span class="tg-subtotal">Tổng: <strong>@String.Format("{0:0,0}", ViewBag.TotalPrice) VNĐ</strong></span>
+                <div class="tg-btns">
+                    <a class="tg-btn tg-active" href="~/ShoppingCart/Cart">Xem Giỏ Hàng</a>
+                    <a class="tg-btn" href="@Url.Action("Order", "ShoppingCart")">Thanh Toán</a>
+                </div>
             </div>
-        </div>
-        <div class="tg-minicarproduct">
-            <figure>
-                <img src="/Content/Images/products/img-03.jpg" alt="image description">
+        }
 
-            </figure>
-            <div class="tg-minicarproductdata">
-                <h5><a href="javascript:void(0);">Have Faith In Your Soul</a></h5>
-                <h6><a href="javascript:void(0);">$ 12.15</a></h6>
-            </div>
-        </div>
-    </div>
-    <div class="tg-minicartfoot">
-        <a class="tg-btnemptycart" href="javascript:void(0);">
-            <i class="fa fa-trash-o"></i>
-            <span>Clear Your Cart</span>
-        </a>
-        <span class="tg-subtotal">Subtotal: <strong>35.78</strong></span>
-        <div class="tg-btns">
-            <a class="tg-btn tg-active" href="javascript:void(0);">View Cart</a>
-            <a class="tg-btn" href="javascript:void(0);">Checkout</a>
-        </div>
     </div>
 </div>
-

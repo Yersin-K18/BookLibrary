@@ -14,11 +14,11 @@
         
             @if (Session["Cart"] == null)
             {
-                <span>@ViewBag.TotalPrice VNĐ</span>
+                <span style="padding-left:10px">@ViewBag.TotalPrice VNĐ</span>
             }
             else
             {
-                <span>@String.Format("{0:0,0}", ViewBag.TotalPrice) VNĐ</span>
+                <span style="padding-left:10px">@String.Format("{0:0,0}", ViewBag.TotalPrice) VNĐ</span>
             }
            
 

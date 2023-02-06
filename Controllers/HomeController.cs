@@ -15,11 +15,11 @@ namespace BookLibrary.Controllers
         {
             return PartialView("_AllCategory", db.Categories); //trả về view một model
         }
-        [ChildActionOnly]
-        public ActionResult menu_Cart()
-        {
-            return PartialView("_Cart", db.Products);
-        }
+        //[ChildActionOnly]
+        //public ActionResult menu_Cart()
+        //{
+        //    return PartialView("_Cart");
+        //}
         [ChildActionOnly]
         public ActionResult get_listBestSelling()
         {

@@ -146,13 +146,7 @@
                                             <div class="tg-description"><p>No products were added to the wishlist!</p></div>
                                         </div>
                                     </div>
-                                    <div class="dropdown tg-themedropdown tg-minicartdropdown">
-                                        <a href="javascript:void(0);" id="tg-minicart" class="tg-btnthemedropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <span class="tg-themebadge">3</span>
-                                            <i class="icon-cart"></i>
-                                        </a>
-                                        @Html.Action("menu_Cart","Home")
-                                    </div>
+                                    @Html.Action("_CartPartial", "ShoppingCart")
                                     <div class="dropdown tg-themedropdown tg-currencydropdown">
                                         <a href="javascript:void(0);" id="tg-currenty" class="tg-btnthemedropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <span>USD</span>

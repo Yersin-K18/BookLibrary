@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -14,7 +14,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BookLibrary</RootNamespace>
     <AssemblyName>BookLibrary</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -106,9 +106,8 @@
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-	<Reference Include="System.Core" />
-	<Reference Include="System.Data.DataSetExtensions" />
-	<Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.Extensions" />
@@ -164,7 +163,7 @@
     <Compile Include="Controllers\ComingSoonController.cs" />
     <Compile Include="Controllers\ContactUsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\LoginAndRegisterController.cs" />
     <Compile Include="Controllers\NewDetailController.cs" />
     <Compile Include="Controllers\NewGridController.cs" />
     <Compile Include="Controllers\NewsListController.cs" />
@@ -239,8 +238,8 @@
     <Content Include="Content\css\font-awesome.min.css" />
     <Content Include="Content\css\icomoon.css" />
     <Content Include="Content\css\jquery-ui.css" />
-    <Content Include="Content\css\login.css" />
     <Content Include="Content\css\LoginAdmin.css" />
+    <Content Include="Content\css\LoginAndRegister.css" />
     <Content Include="Content\css\main.css" />
     <Content Include="Content\css\normalize.css" />
     <Content Include="Content\css\owl.carousel.css" />
@@ -318,7 +317,6 @@
     <Content Include="Content\Images\instagram\img-07.jpg" />
     <Content Include="Content\Images\instagram\img-08.jpg" />
     <Content Include="Content\Images\instagram\img-09.jpg" />
-    <Content Include="Content\Images\login-register-bg\reading-book.jpg" />
     <Content Include="Content\Images\logo-02.png" />
     <Content Include="Content\Images\logo.png" />
     <Content Include="Content\Images\owl.video.play.png" />
@@ -351,6 +349,7 @@
     <Content Include="Content\Images\ui-icons_cc0000_256x240.html" />
     <Content Include="Content\Images\ui-icons_ffffff_256x240.html" />
     <Content Include="Content\Images\users\img-01.jpg" />
+    <Content Include="Content\js\LoginAndRegister.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont3e6e.svg" />
     <Content Include="fonts\icomoonbd7d.svg" />
@@ -463,7 +462,6 @@
     <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\ComingSoon\Index.cshtml" />
     <Content Include="Views\ContactUs\Index.cshtml" />
-    <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Shared\_listBestSelling.cshtml" />
     <Content Include="Views\Product\_getAllCategory.cshtml" />
     <Content Include="Views\Shared\_LayoutProducts.cshtml" />
@@ -503,6 +501,7 @@
     <Content Include="Views\AdminProducts\Index.cshtml" />
     <Content Include="Views\Shared\_UserLogin.cshtml" />
     <Content Include="Views\Shared\_TopAuthors.cshtml" />
+    <Content Include="Views\LoginAndRegister\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

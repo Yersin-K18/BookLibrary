@@ -6,9 +6,9 @@ using System.Web.Mvc;
 
 namespace BookLibrary.Controllers
 {
-    public class RegisterController : Controller
+    public class LoginAndRegisterController : Controller
     {
-        // GET: Register
+        // GET: LoginAndRegister
         public ActionResult Index()
         {
             return View();

@@ -36,5 +36,9 @@ namespace BookLibrary.Models
 
             return null;
         }
+        static public int GetIDUser()
+        {
+            return db.Users.Count() + 1;
+        }
     }
 }

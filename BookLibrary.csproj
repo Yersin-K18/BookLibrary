@@ -501,7 +501,8 @@
     <Content Include="Views\AdminProducts\Index.cshtml" />
     <Content Include="Views\Shared\_UserLogin.cshtml" />
     <Content Include="Views\Shared\_TopAuthors.cshtml" />
-    <Content Include="Views\LoginAndRegister\Index.cshtml" />
+    <Content Include="Views\LoginAndRegister\DangKy.cshtml" />
+    <Content Include="Views\LoginAndRegister\DangNhap.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

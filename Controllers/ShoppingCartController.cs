@@ -129,7 +129,7 @@ namespace BookLibrary.Controllers
             //Kiểm tra đăng nhập
             if (Session["user"] == null || Session["user"].ToString() == "")
             {
-                return RedirectToAction("Index", "Login");
+                return RedirectToAction("DangNhap", "LoginAndRegister");
             }
             if (Session["Cart"] == null)
             {
@@ -149,7 +149,7 @@ namespace BookLibrary.Controllers
             List<Cart> gh = GetCarts();
             if(OrdersModel.getOderID() == 0)
             {
-                ddh.id = 1;
+                ddh.id = 0;
             }
             else
             {

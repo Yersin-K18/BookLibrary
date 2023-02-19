@@ -1,0 +1,83 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <title>Log in And Sign up</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/Content/Css/LoginAndRegister.css" rel="stylesheet" />
+    <link href="~/Content/Css/font-awesome.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <h4 style="color: red; text-align: center"></h4>
+        <div class="title-text">
+            <div class="title signup" style=" width: 330px;">Đăng Ký</div>
+            <div class="title login">Đăng Nhập</div>
+        </div>
+        <div class="form-container">
+            <div class="slide-controls">
+                <input type="radio" name="slide" id="login">
+                <input type="radio" name="slide" id="signup" checked>
+                <a href="@Url.Action("DangNhap")" for="login" class="slide login" style="text-decoration: none;">Đăng Nhập</a>
+                <a href="@Url.Action("DangKy")" for="signup" class="slide signup" style="text-decoration: none;">Đăng Ký</a>
+                <div class="slider-tab"></div>
+            </div>
+            
+              
+            <div class="form-inner">
+                @using (Html.BeginForm())
+                {
+                    @Html.ValidationSummary(true)
+                <form action="#" class="signup">
+                    <div class="field">
+
+                        @Html.TextBox("fullname", null, new { placeholder = " Nhập Họ Và Tên", required = true })
+
+                    </div>
+                    <div class="field">
+
+                        @Html.TextBox("username", null, new { placeholder = "Nhập Tên Người Dùng", required = true })
+
+                    </div>
+                    <div class="field">
+
+                        @Html.TextBox("email", null, new { placeholder = "Nhập Email", required = true })
+
+                    </div>
+                    <div class="field">
+                        @Html.Password("password", null, new { placeholder = "Nhập Mật Khẩu", required = true })
+                    </div>
+                    <div class="field">
+                        @Html.Password("retypeMatKhau", null, new { placeholder = "Nhập Lại Mật Khẩu", required = true })
+
+                    </div>
+                    <div class="field">
+
+                        @Html.TextBox("phonenumber", null, new { placeholder = "Nhập Số Điện Thoại", required = true })
+
+                    </div>
+                    <div class="field">
+
+                        @Html.TextBox("address", null, new { placeholder = "Nhập Địa Chỉ", required = true })
+
+                    </div>
+
+                    <div class="field btn">
+                        <div class="btn-layer"></div>
+                        <input type="submit" value=" Đăng Ký">
+                    </div>
+                </form>
+                }
+                </div>
+            
+
+        </div>
+    </div>
+    <script src="~/Content/js/LoginAndRegister.js"></script>
+</body>
+</html>

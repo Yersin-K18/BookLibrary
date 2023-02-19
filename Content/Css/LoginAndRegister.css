@@ -33,7 +33,7 @@ html, body {
 }
 
 .container .title {
-    width: 50%;
+    width: 330px;
     font-size: 34px;
     font-weight: 600;
     text-align: center;
@@ -65,8 +65,9 @@ html, body {
     transition: all 0.6s ease;
 }
 
-.slide-controls label.signup {
+.slide-controls a.signup {
     color: black;
+    text-decoration: none;
 }
 
 .slide-controls .slider-tab {
@@ -88,21 +89,22 @@ input[type="radio"] {
     left: 50%;
 }
 
-#signup:checked ~ label.signup {
+#signup:checked ~ a.signup {
     color: white;
     cursor: default;
     user-select: none;
 }
 
-#signup:checked ~ label.login {
+#signup:checked ~ a.login {
+    color: black;
+    text-decoration: none;
+}
+
+#login:checked ~ a.signup {
     color: black;
 }
 
-#login:checked ~ label.signup {
-    color: black;
-}
-
-#login:checked ~ label.login {
+#login:checked ~ a.login {
     cursor: default;
     user-select: none;
 }

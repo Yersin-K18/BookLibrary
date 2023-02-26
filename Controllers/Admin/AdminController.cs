@@ -25,14 +25,14 @@ namespace BookLibrary.Controllers
             Session["user"] = user;
             return View("Manage");
         }
-
+        [ChildActionOnly]
         public ActionResult Manage()
         {
             if (Session["user"] is null) return View("Index");
 
             int userId = ((User)Session["user"]).id;
             string userName = ((User)Session["user"]).username;
-            return View();
+            return PartialView("Manage");
         }
     }
 }

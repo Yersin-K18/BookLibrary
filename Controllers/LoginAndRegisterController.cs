@@ -76,7 +76,7 @@ namespace BookLibrary.Controllers
                 
             return View();
         }
-        [HttpPost]
+        /*[HttpPost]
         public ActionResult DangNhap(FormCollection collection)
         {
             var tenDN = collection["TenDN"];
@@ -93,11 +93,23 @@ namespace BookLibrary.Controllers
                 return View();
             }
            
+        }*/
+        [HttpPost]
+        public ActionResult DangNhap(string Username_or_Email, string Password)
+        {
+            User user = UserModel.VerifyCredentials(Username_or_Email, Password);
+            if (user == null)
+            {
+                ViewBag.Error = "Invalid email or password";
+                return View();
+            }
+            Session["user"] = user;
+            return RedirectToAction("Index", "Home");
         }
-
-
-
-
     }
-    
 }
+
+
+
+
+  

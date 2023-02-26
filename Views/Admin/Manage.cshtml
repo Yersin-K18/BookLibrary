@@ -1,8 +1,9 @@
 ﻿
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+ 
     List<string> database = new List<string>()
-    {
+{
         "Authors",
         "Categories",
         "Orders",
@@ -20,20 +21,30 @@
     <title>Manage</title>
 </head>
 <body>
-    <div> 
-        <table>
-            <tr>
-                <th>Tên bảng</th>
-                <th></th>
-            </tr>
-            @foreach (var item in database)
-            {
-            <tr>
-                <th>@item</th>
-                <th>@Html.ActionLink("Edit", "Index", "Admin" + @item)</th>
-            </tr>
-            }
-        </table>
+    <div class="row">
+        @foreach (var item in database)
+        {
+            <div class="col-lg-12">
+                <div class="card card-widget task-card">
+                    <div class="card-body">
+                        <div class="d-flex flex-wrap align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <div class="custom-control custom-task custom-checkbox custom-control-inline">
+                                </div>
+                                <div>
+                                    <h5 class="mb-2">@item</h5>
+                                    <div class="media align-items-center">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="media align-items-center mt-md-0 mt-3">
+                                <div class="btn bg-secondary-light mr-3">@Html.ActionLink("Edit", "Index", "Admin" + @item)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
     </div>
 </body>
 </html>

@@ -4,76 +4,78 @@
     ViewBag.Title = "Order";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h2 style="text-align:center">THÔNG TIN HÀNG HOÁ</h2>
-<table align="center" border="1">
-    <tr style="text-align:center;font-weight: bold">
-        <td>Mã sách</td>
-        <td>Tên sách</td>
-        <td>Ảnh bìa</td>
-        <td>Số lượng</td>
-        <td>Đơn giá</td>
-        <td>Thành tiền</td>
-
-    </tr>
-
-    @foreach (var item in Model)
-    {
-        <tr style="text-align: center; font-weight: bold">
-            <td>@item.BookID</td>
-            <td>@item.bName</td>
-            <td><img src="~/Content/Images/products/@item.bImage" alt="image description"></td>
-            @using (Html.BeginForm("UpdateCart", "ShoppingCart", new { @bIdPR = item.BookID }))
-            {
-            <td>@item.bQuantity</td>
-            <td>@String.Format("{0:0,0}", item.bPrice)</td>
-            <td>@String.Format("{0:0,0}", item.bTotal)</td>
-            }
+<div style="padding: 50px">
+    <h2 style="text-align:center">PRODUCT INFORMATION</h2>
+    <table align="center" border="1">
+        <tr style="text-align:center;font-weight: bold">
+            <td>ID Book</td>
+            <td>Name</td>
+            <td>Image</td>
+            <td>Quantity</td>
+            <td>Price</td>
+            <td>Amount</td>
 
         </tr>
-            }
+
+        @foreach (var item in Model)
+        {
+            <tr style="text-align: center; font-weight: bold">
+                <td>@item.BookID</td>
+                <td>@item.bName</td>
+                <td><img style="width:70px; height: 90px;" src="~/Content/Images/books/@item.bImage" alt="image description"></td>
+                @using (Html.BeginForm("UpdateCart", "ShoppingCart", new { @bIdPR = item.BookID }))
+                {
+                    <td>@item.bQuantity</td>
+                    <td>@item.bPrice</td>
+                    <td>@item.bTotal</td>
+                }
+
+            </tr>
+        }
 
         <tr style="font-weight: bold; text-align: right; color: red">
-            <td colspan="3">Số lượng sách: @ViewBag.TotalQuantity</td>
-            <td colspan="3">Tổng tiền: @String.Format("{0:0,0}", ViewBag.TotalPrice) VNĐ</td>
+            <td colspan="3">Total Quantity: @ViewBag.TotalQuantity</td>
+            <td colspan="3">Total: $@ViewBag.TotalPrice </td>
         </tr>
         <tr style="font-weight: bold; color: blue; text-align: right">
             <td colspan="6">
-                @Html.ActionLink("TRỞ VỀ GIỎ HÀNG", "Cart", "ShoppingCart")
+                @Html.ActionLink("BACK YOUR CART", "Cart", "ShoppingCart")
             </td>
         </tr>
     </table>
 
-<h2 style="text-align: center">THÔNG TIN ĐẶT HÀNG</h2>
-@{ 
-    User ur = (User)Session["user"];
-}
-<table align="center">
-    @using (Html.BeginForm())
-    {
-        @Html.ValidationSummary(true)
-        <tr style="height: 40px">
-            <td>Họ tên khách hàng: </td>
-            <td style="font-weight: bold">@ur.FullName</td>
-        </tr>
-        <tr style="height: 40px">
-            <td>Địa chỉ: </td>
-            <td style="font-weight: bold">@ur.DiaChi</td>
-        </tr>
-        <tr style="height: 40px">
-            <td>Số điện thoại: </td>
-            <td style="font-weight: bold">@ur.Sdt</td>
-        </tr>
-        <tr style="height: 40px">
-            <td>Ngày đặt hàng: </td>
-            <td style="font-weight: bold">@DateTime.Now.ToShortDateString()</td>
-        </tr>
-        <tr style="height: 40px">
-            <td></td>
-            <td>
-                <input type="submit" value="ĐỒNG Ý ĐẶT HÀNG" />
-            </td>
-        </tr>
+    <h2 style="text-align: center">ORDER INFORMATION</h2>
+    @{
+        User ur = (User)Session["user"];
     }
-</table>
+    <table align="center">
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary(true)
+            <tr style="height: 40px">
+                <td>Full Name: </td>
+                <td style="font-weight: bold">@ur.FullName</td>
+            </tr>
+            <tr style="height: 40px">
+                <td>Address: </td>
+                <td style="font-weight: bold">@ur.DiaChi</td>
+            </tr>
+            <tr style="height: 40px">
+                <td>Phone Number: </td>
+                <td style="font-weight: bold">@ur.Sdt</td>
+            </tr>
+            <tr style="height: 40px">
+                <td>Day Order: </td>
+                <td style="font-weight: bold">@DateTime.Now.ToShortDateString()</td>
+            </tr>
+            <tr style="height: 40px">
+                <td></td>
+                <td>
+                    <input style="padding:10px;" type="submit" value="SUBMIT YOUR ORDER" />
+                </td>
+            </tr>
+        }
+    </table>
+</div>
 
 

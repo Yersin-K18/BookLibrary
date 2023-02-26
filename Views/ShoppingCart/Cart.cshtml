@@ -5,47 +5,49 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2 style="text-align:center">THÔNG TIN GIỎ HÀNG</h2>
-<table>
-    <tr style="text-align:center;font-weight: bold">
-        <td>Mã sách</td>
-        <td>Tên sách</td>
-        <td>Ảnh bìa</td>
-        <td>Số lượng</td>
-        <td>Đơn giá</td>
-        <td>Thành tiền</td>
-        <td></td>
-        <td></td>
-    </tr>
-    @foreach(var item in Model)
-            {
-                <tr>
-                    <td>@item.BookID</td>
-                    <td>@item.bName</td>
-                    <td><img src="~/Content/Images/products/@item.bImage" alt="image description"></td>
-                    @using (Html.BeginForm("UpdateCart", "ShoppingCart", new { @bIdPR = item.BookID }))
-                    {
-                        <td><input type="number" min="1" name="txtQuantity" value="@item.bQuantity"/></td>
-                        <td>@String.Format("{0:0,0}", item.bPrice)</td>
-                        <td>@String.Format("{0:0,0}", item.bTotal)</td>
-                        <td>@Html.ActionLink("Xoá Sản Phẩm", "DeleteCart", new { @bIdPR = item.BookID })</td>
-                        <td><input type="submit" value="Cập Nhật" /></td>
-                    }
-                </tr>
-            }
-<tr style="font-weight: bold; text-align: right; color: red">
-    <td colspan="3">Số lượng sách: @ViewBag.TotalQuantity</td>
-    <td colspan="3">Tổng tiền: @String.Format("{0:0,0}", ViewBag.TotalPrice) VNĐ</td>
-</tr>
-<tr style="font-weight: bold; color: blue; text-align: right">
-    <td colspan="9">
-        @Html.ActionLink("Xoá Giỏ Hàng","ClearCart")
-    </td>
-</tr>
-<tr style="font-weight: bold; color: blue; text-align: right">
-    <td colspan="9">
-        @Html.ActionLink("ĐẶT HÀNG", "Order", "ShoppingCart")
-    </td>
-</tr>
-</table>
+<div style="padding: 50px">
+    <h2 style="text-align:center">CART INFORMATION</h2>
+    <table>
+        <tr style="text-align:center;font-weight: bold">
+            <td>ID Book</td>
+            <td>Name</td>
+            <td>Image</td>
+            <td>Quantity</td>
+            <td>Price</td>
+            <td>Amount</td>
+            <td></td>
+            <td></td>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.BookID</td>
+                <td>@item.bName</td>
+                <td><img style="height:90px; width:70px;" src="~/Content/Images/books/@item.bImage" alt="image description"></td>
+                @using (Html.BeginForm("UpdateCart", "ShoppingCart", new { @bIdPR = item.BookID }))
+                {
+                    <td><input type="number" min="1" name="txtQuantity" value="@item.bQuantity" /></td>
+                    <td>$@item.bPrice</td>
+                    <td>$@item.bTotal</td>
+                    <td>@Html.ActionLink("Delete Product", "DeleteCart", new { @bIdPR = item.BookID })</td>
+                    <td><input type="submit" value="UPDATE" /></td>
+                }
+            </tr>
+        }
+        <tr style="font-weight: bold; text-align: right; color: red">
+            <td colspan="3">Total Quantity: @ViewBag.TotalQuantity</td>
+            <td colspan="3">Total: $@ViewBag.TotalPrice </td>
+        </tr>
+        <tr style="font-weight: bold; color: blue; text-align: right">
+            <td colspan="9">
+                @Html.ActionLink("Delete Cart", "ClearCart")
+            </td>
+        </tr>
+        <tr style="font-weight: bold; color: blue; text-align: right">
+            <td colspan="9">
+                @Html.ActionLink("SUBMIT YOUR ORDER", "Order", "ShoppingCart")
+            </td>
+        </tr>
+    </table>
 
+</div>

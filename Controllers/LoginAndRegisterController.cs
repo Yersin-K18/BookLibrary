@@ -36,7 +36,6 @@ namespace BookLibrary.Controllers
             else
             {
                 // lưu thông tin User vào CSDL
-                // ...
                 if (UserModel.GetIDUser() == 0)
                 {
                     KH.id = 1;

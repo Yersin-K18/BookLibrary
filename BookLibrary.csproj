@@ -430,7 +430,6 @@
     <Content Include="Scripts\vendor\bootstrap.min.js" />
     <Content Include="Scripts\vendor\jquery-library.js" />
     <Content Include="Scripts\vendor\modernizr-2.8.3-respond-1.4.2.min.js" />
-    <Content Include="Views\Product\products.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -464,10 +463,8 @@
     <Content Include="Views\ContactUs\Index.cshtml" />
     <Content Include="Views\Shared\_listBestSelling.cshtml" />
     <Content Include="Views\Product\_getAllCategory.cshtml" />
-    <Content Include="Views\Shared\_LayoutProducts.cshtml" />
     <Content Include="Views\Product\_SachGiaoKhoa.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
-    <Content Include="Views\Product\_getAllCategory.cshtml" />
     <Content Include="Views\Admin\Manage.cshtml" />
     <Content Include="Views\AdminUsers\Create.cshtml" />
     <Content Include="Views\AdminUsers\Delete.cshtml" />
@@ -503,6 +500,7 @@
     <Content Include="Views\Shared\_TopAuthors.cshtml" />
     <Content Include="Views\LoginAndRegister\DangKy.cshtml" />
     <Content Include="Views\LoginAndRegister\DangNhap.cshtml" />
+    <Content Include="Views\Shared\_LayoutProducts.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

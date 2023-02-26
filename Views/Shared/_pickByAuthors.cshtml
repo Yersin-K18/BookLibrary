@@ -7,7 +7,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="tg-sectionhead">
                     <h2><span>Some Great Books</span>Picked By Authors</h2>
-                    @Html.ActionLink("View All", "Index", "Product", new { @class = "tg-btn" })
+                    <a class="tg-btn" href="@Url.Action("Index", "Product")">View All</a>
                 </div>
             </div>
             <div id="tg-pickedbyauthorslider" class="tg-pickedbyauthor tg-pickedbyauthorslider owl-carousel">

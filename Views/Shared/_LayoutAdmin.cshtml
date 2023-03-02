@@ -29,9 +29,9 @@
 
         <div class="iq-sidebar  sidebar-default ">
             <div class="iq-sidebar-logo d-flex align-items-center">
-                <a href="../backend/index.html" class="header-logo">
+                <a href="@Url.Action("Index", "Admin")" class="header-logo">
                     <img src="~/Content/Admin/images/logo.svg" alt="logo">
-                    <h3 class="logo-title light-logo">Webkit</h3>
+                    <h3 class="logo-title light-logo">Admin</h3>
                 </a>
                 <div class="iq-menu-bt-sidebar ml-0">
                     <i class="las la-bars wrapper-menu"></i>
@@ -128,7 +128,6 @@
                         <i class="ri-menu-line wrapper-menu"></i>
                         <a href="../backend/index.html" class="header-logo">
                             <h4 class="logo-title text-uppercase">Webkit</h4>
-
                         </a>
                     </div>
                     <div class="navbar-breadcrumb">
@@ -366,8 +365,7 @@
         </div>
         <div class="content-page">
             <div class="container-fluid">
-                @RenderBody(
-                )
+                @RenderBody()
                 <!-- Page end  -->
             </div>
         </div>
@@ -645,7 +643,7 @@
                 </div>
                 <div class="col-lg-6 text-right">
                     <span class="mr-1">
-                    <script>document.write(new Date().getFullYear())</script>©</span> <a href="#" class="">Webkit</a>.
+                    <script>document.write(new Date().getFullYear())</script>©</span> <a href="https://github.com/Yersin-K18/BookLibrary" class="">BookLibrary</a>.
                 </div>
             </div>
         </div>

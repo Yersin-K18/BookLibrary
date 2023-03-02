@@ -1,16 +1,20 @@
-﻿using BookLibrary.Models;
+using BookLibrary.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 using System.Web.Mvc;
 
 namespace BookLibrary.Controllers
 {
-
+    
     public class LoginAndRegisterController : Controller
     {
-        BookLibraryEntities db = new BookLibraryEntities();
+        BookLibraryEntities db = new BookLibraryEntities(); 
         // GET: LoginAndRegister
-
+        
         [HttpGet]
-        public ActionResult DangKy()
+        public ActionResult DangKy() 
         {
             return View();
         }
@@ -26,7 +30,7 @@ namespace BookLibrary.Controllers
             var retypeMatKhau = collection["retypeMatKhau"];
             User KH = new User();
             // kiểm tra xem mật khẩu nhập lại có khớp với mật khẩu không
-
+            
             if (matKhau != retypeMatKhau)
             {
                 ViewBag.ThongBao = "Mật khẩu nhập lại không khớp";
@@ -36,6 +40,7 @@ namespace BookLibrary.Controllers
             else
             {
                 // lưu thông tin User vào CSDL
+                // ...
                 if (UserModel.GetIDUser() == 0)
                 {
                     KH.id = 1;
@@ -45,38 +50,38 @@ namespace BookLibrary.Controllers
                     KH.id = UserModel.GetIDUser() - 1;
                 }
                 KH.username = username;
-                KH.FullName = fullname;
-                KH.Sdt = phonenumber;
-                KH.DiaChi = address;
+                KH.FullName = fullname; 
+                KH.Sdt= phonenumber;
+                KH.DiaChi= address;
                 KH.Email = tenDN;
                 KH.password = matKhau;
-
-
+                
+                
                 db.Users.Add(KH);
                 db.SaveChanges();
                 // chuyển hướng đến trang đăng nhập
                 return RedirectToAction("DangNhap");
             }
-
+                   
 
             return this.DangKy();
         }
         [HttpGet]
         public ActionResult DangNhap()
         {
-            if (Session["user"] != null)
+            if (Session["user"] != null) 
             {
                 return RedirectToAction("Index", "Home");
             }
-
+                
             return View();
         }
-        [HttpPost]
+        /*[HttpPost]
         public ActionResult DangNhap(FormCollection collection)
         {
             var tenDN = collection["TenDN"];
             var matKhau = collection["MatKhau"];
-            User kh = UserModel.VerifyCredentials(tenDN, matKhau);
+            User kh = db.Users.SingleOrDefault(x => x.Email == tenDN && x.password == matKhau);
             if (kh != null)
             {
                 Session["user"] = kh;
@@ -87,6 +92,24 @@ namespace BookLibrary.Controllers
                 ViewBag.ThongBao = "Tên đăng nhập hoặc mật khẩu không đúng";
                 return View();
             }
+           
+        }*/
+        [HttpPost]
+        public ActionResult DangNhap(string Username_or_Email, string Password)
+        {
+            User user = UserModel.VerifyCredentials(Username_or_Email, Password);
+            if (user == null)
+            {
+                ViewBag.Error = "Invalid email or password";
+                return View();
+            }
+            Session["user"] = user;
+            return RedirectToAction("Index", "Home");
         }
     }
 }
+
+
+
+
+  

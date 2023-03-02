@@ -28,8 +28,8 @@
                             <div class="tg-booktitle">
                                 <h3>
                                     <a href="javascript:void(0);">
-                                        @if (@itemBSL.Name.Length > 16)
-                                        { tam = @itemBSL.Name.Substring(0, 13) + "..."; }
+                                        @if (@itemBSL.Name.Length > 25)
+                                        { tam = @itemBSL.Name.Substring(0, 25) + "..."; }
                                         else
                                         { tam = @itemBSL.Name; }
                                         @tam
@@ -44,7 +44,7 @@
                             </span>
                             <a class="tg-btn tg-btnstyletwo" href="@Url.Action("AddCart","ShoppingCart", new {@BookID = itemBSL.ID, @strURL = Request.Url.ToString()})">
                                 <i class="fa fa-shopping-basket"></i>
-                                <em>Thêm vào giỏ</em>
+                                <em>Add Cart</em>
                             </a>
                         </div>
                     </div>

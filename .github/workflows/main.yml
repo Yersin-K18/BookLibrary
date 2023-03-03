@@ -38,4 +38,3 @@ jobs:
         password: ${{ secrets.ftp_password }}
         local-dir: /a/BookLibrary/BookLibrary/_build/_publishedwebsites/booklibrary/
         server-dir: /booklibrary/
-        dangerous-clean-slate: true

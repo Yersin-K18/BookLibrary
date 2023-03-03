@@ -15,5 +15,9 @@ namespace BookLibrary.Models
         {
             return db.Products.OrderByDescending(a => a.Name).Take(5).ToList();
         }
+        static public int NumberBook()
+        {
+            return db.Products.Count();
+        }
     }
 }

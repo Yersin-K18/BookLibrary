@@ -10,16 +10,14 @@ namespace BookLibrary.Controllers.Admin
     {
         private BookLibraryEntities db = new BookLibraryEntities();
 
-        // GET: AdminProducts
+        // GET: Products
         public ActionResult Index()
         {
-            if (Session["user"] is null || string.IsNullOrWhiteSpace(((User)Session["user"]).username))
-                return RedirectToAction("Index", "Home");
             return View(db.Products.ToList());
         }
 
-        // GET: AdminProducts/Details/5
-        public ActionResult Details(string id)
+        // GET: Products/Details/5
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
@@ -33,18 +31,18 @@ namespace BookLibrary.Controllers.Admin
             return View(product);
         }
 
-        // GET: AdminProducts/Create
+        // GET: Products/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: AdminProducts/Create
+        // POST: Products/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,Name,Description,Price,Categories,Language,Image")] Product product)
+        public ActionResult Create([Bind(Include = "ID,Name,Description,Price,CategorieID,Language,Image")] Product product)
         {
             if (ModelState.IsValid)
             {
@@ -56,8 +54,8 @@ namespace BookLibrary.Controllers.Admin
             return View(product);
         }
 
-        // GET: AdminProducts/Edit/5
-        public ActionResult Edit(string id)
+        // GET: Products/Edit/5
+        public ActionResult Edit(int? id)
         {
             if (id == null)
             {
@@ -71,12 +69,12 @@ namespace BookLibrary.Controllers.Admin
             return View(product);
         }
 
-        // POST: AdminProducts/Edit/5
+        // POST: Products/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,Name,Description,Price,Categories,Language,Image")] Product product)
+        public ActionResult Edit([Bind(Include = "ID,Name,Description,Price,CategorieID,Language,Image")] Product product)
         {
             if (ModelState.IsValid)
             {
@@ -87,8 +85,8 @@ namespace BookLibrary.Controllers.Admin
             return View(product);
         }
 
-        // GET: AdminProducts/Delete/5
-        public ActionResult Delete(string id)
+        // GET: Products/Delete/5
+        public ActionResult Delete(int? id)
         {
             if (id == null)
             {
@@ -102,10 +100,10 @@ namespace BookLibrary.Controllers.Admin
             return View(product);
         }
 
-        // POST: AdminProducts/Delete/5
+        // POST: Products/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(string id)
+        public ActionResult DeleteConfirmed(int id)
         {
             Product product = db.Products.Find(id);
             db.Products.Remove(product);

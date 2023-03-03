@@ -1,71 +1,64 @@
 ﻿@model IEnumerable<BookLibrary.Models.Product>
 
 @{
+    ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<!DOCTYPE html>
+<h2>Index</h2>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Price)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CategorieID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Language)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Image)
-            </th>
-            <th></th>
-        </tr>
-    
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CategorieID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Language)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Image)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-                @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-            </td>
-        </tr>
-    }
-    
-    </table>
-</body>
-</html>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CategorieID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Language)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CategorieID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Language)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Image)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

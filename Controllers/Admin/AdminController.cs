@@ -32,5 +32,11 @@ namespace BookLibrary.Controllers
 
             return PartialView("Manage");
         }
+        [HttpGet]
+        public ActionResult Logout()
+        {
+            Session["user"] = null;
+            return RedirectToAction("Index","Admin");
+        }
     }
 }

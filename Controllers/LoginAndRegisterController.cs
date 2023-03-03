@@ -75,25 +75,7 @@ namespace BookLibrary.Controllers
             }
                 
             return View();
-        }
-        /*[HttpPost]
-        public ActionResult DangNhap(FormCollection collection)
-        {
-            var tenDN = collection["TenDN"];
-            var matKhau = collection["MatKhau"];
-            User kh = db.Users.SingleOrDefault(x => x.Email == tenDN && x.password == matKhau);
-            if (kh != null)
-            {
-                Session["user"] = kh;
-                return RedirectToAction("Index", "Home");
-            }
-            else
-            {
-                ViewBag.ThongBao = "Tên đăng nhập hoặc mật khẩu không đúng";
-                return View();
-            }
-           
-        }*/
+        }     
         [HttpPost]
         public ActionResult DangNhap(string Username_or_Email, string Password)
         {

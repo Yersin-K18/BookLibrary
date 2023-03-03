@@ -1,4 +1,4 @@
-﻿@model IEnumerable<BookLibrary.Models.OrderDetail>
+﻿@model IEnumerable<BookLibrary.Models.Order>
 
 @{
     ViewBag.Title = "Index";
@@ -13,16 +13,19 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.OrderId)
+            @Html.DisplayNameFor(model => model.DateOrder)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ProductId)
+            @Html.DisplayNameFor(model => model.Total)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.UnitPrice)
+            @Html.DisplayNameFor(model => model.Discount)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Quantity)
+            @Html.DisplayNameFor(model => model.UserId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
         </th>
         <th></th>
     </tr>
@@ -30,16 +33,19 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.OrderId)
+            @Html.DisplayFor(modelItem => item.DateOrder)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ProductId)
+            @Html.DisplayFor(modelItem => item.Total)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.UnitPrice)
+            @Html.DisplayFor(modelItem => item.Discount)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Quantity)
+            @Html.DisplayFor(modelItem => item.UserId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.id }) |

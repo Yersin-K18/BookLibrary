@@ -13,8 +13,6 @@ namespace BookLibrary.Controllers.Admin
         // GET: AdminUsers
         public ActionResult Index()
         {
-            if (Session["user"] is null || string.IsNullOrWhiteSpace(((User)Session["user"]).username))
-                return RedirectToAction("Index", "Home");
             return View(db.Users.ToList());
         }
 
@@ -121,6 +119,5 @@ namespace BookLibrary.Controllers.Admin
             }
             base.Dispose(disposing);
         }
-
     }
 }

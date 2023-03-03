@@ -6,19 +6,17 @@ using System.Web.Mvc;
 
 namespace BookLibrary.Controllers.Admin
 {
-    public class AdminOrdersController : Controller
+    public class AdminOrderController : Controller
     {
         private BookLibraryEntities db = new BookLibraryEntities();
 
-        // GET: AdminOrders
+        // GET: AdminOrder
         public ActionResult Index()
         {
-            if (Session["user"] is null || string.IsNullOrWhiteSpace(((User)Session["user"]).username))
-                return RedirectToAction("Index", "Home");
             return View(db.Orders.ToList());
         }
 
-        // GET: AdminOrders/Details/5
+        // GET: AdminOrder/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -33,13 +31,13 @@ namespace BookLibrary.Controllers.Admin
             return View(order);
         }
 
-        // GET: AdminOrders/Create
+        // GET: AdminOrder/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: AdminOrders/Create
+        // POST: AdminOrder/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -56,7 +54,7 @@ namespace BookLibrary.Controllers.Admin
             return View(order);
         }
 
-        // GET: AdminOrders/Edit/5
+        // GET: AdminOrder/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -71,7 +69,7 @@ namespace BookLibrary.Controllers.Admin
             return View(order);
         }
 
-        // POST: AdminOrders/Edit/5
+        // POST: AdminOrder/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -87,7 +85,7 @@ namespace BookLibrary.Controllers.Admin
             return View(order);
         }
 
-        // GET: AdminOrders/Delete/5
+        // GET: AdminOrder/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -102,7 +100,7 @@ namespace BookLibrary.Controllers.Admin
             return View(order);
         }
 
-        // POST: AdminOrders/Delete/5
+        // POST: AdminOrder/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

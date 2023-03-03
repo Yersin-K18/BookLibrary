@@ -21,5 +21,7 @@ namespace BookLibrary.Models
         public Nullable<int> CategorieID { get; set; }
         public string Language { get; set; }
         public string Image { get; set; }
+        public Nullable<int> AuthorID { get; set; }
+        public Nullable<int> Quantity { get; set; }
     }
 }

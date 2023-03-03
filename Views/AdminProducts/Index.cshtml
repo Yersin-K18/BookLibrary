@@ -30,6 +30,12 @@
         <th>
             @Html.DisplayNameFor(model => model.Image)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AuthorID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </th>
         <th></th>
     </tr>
 
@@ -52,6 +58,12 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Image)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AuthorID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantity)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |

@@ -13,8 +13,6 @@ namespace BookLibrary.Controllers.Admin
         // GET: AdminCategories
         public ActionResult Index()
         {
-            if (Session["user"] is null || string.IsNullOrWhiteSpace(((User)Session["user"]).username))
-                return RedirectToAction("Index", "Home");
             return View(db.Categories.ToList());
         }
 

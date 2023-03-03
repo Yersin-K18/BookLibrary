@@ -157,8 +157,8 @@
     <Compile Include="Controllers\Admin\AdminController.cs" />
     <Compile Include="Controllers\Admin\AdminOrderDetailsController.cs" />
     <Compile Include="Controllers\Admin\AdminOrdersController.cs" />
-    <Compile Include="Controllers\Admin\AdminProductsController.cs" />
     <Compile Include="Controllers\Admin\AdminUsersController.cs" />
+    <Compile Include="Controllers\Admin\AdminProductsController.cs" />
     <Compile Include="Controllers\AuthorController.cs" />
     <Compile Include="Controllers\AuthorDetailController.cs" />
     <Compile Include="Controllers\ComingSoonController.cs" />
@@ -3023,11 +3023,6 @@
     <Content Include="Views\AdminOrderDetails\Details.cshtml" />
     <Content Include="Views\AdminOrderDetails\Edit.cshtml" />
     <Content Include="Views\AdminOrderDetails\Index.cshtml" />
-    <Content Include="Views\AdminProducts\Create.cshtml" />
-    <Content Include="Views\AdminProducts\Delete.cshtml" />
-    <Content Include="Views\AdminProducts\Details.cshtml" />
-    <Content Include="Views\AdminProducts\Edit.cshtml" />
-    <Content Include="Views\AdminProducts\Index.cshtml" />
     <Content Include="Views\Shared\_UserLogin.cshtml" />
     <Content Include="Views\Shared\_TopAuthors.cshtml" />
     <Content Include="Views\LoginAndRegister\DangKy.cshtml" />
@@ -3035,6 +3030,11 @@
     <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
     <Content Include="Views\Admin\Dashboard.cshtml" />
     <Content Include="Views\Shared\_LayoutProducts.cshtml" />
+    <Content Include="Views\AdminProducts\Create.cshtml" />
+    <Content Include="Views\AdminProducts\Delete.cshtml" />
+    <Content Include="Views\AdminProducts\Details.cshtml" />
+    <Content Include="Views\AdminProducts\Edit.cshtml" />
+    <Content Include="Views\AdminProducts\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

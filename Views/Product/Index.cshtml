@@ -1,473 +1,122 @@
-﻿
+﻿@using BookLibrary.Models
+@model List<Product>
 @{
-    ViewBag.Title = "Index";
+	ViewBag.Title = "Index";
 	Layout = "~/Views/Shared/_LayoutProducts.cshtml";
+	int total = ProductsModel.NumberBook();
 }
 
 <div class="col-xs-12 col-sm-8 col-md-8 col-lg-9 pull-right">
-    <div id="tg-content" class="tg-content">
-        <div class="tg-products">
-            <div class="tg-sectionhead">
-                <h2><span>People’s Choice</span>Bestselling Books</h2>
-            </div>
-            <div class="tg-featurebook alert" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <div class="tg-featureditm">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 hidden-sm hidden-xs">
-                            <figure><img src="/Content/Images/img-04.png" alt="image description"></figure>
-                        </div>
-                        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-                            <div class="tg-featureditmcontent">
-                                <div class="tg-themetagbox"><span class="tg-themetag">featured</span></div>
-                                <div class="tg-booktitle">
-                                    <h3><a href="javascript:void(0);">Things To Know About Green Flat Design</a></h3>
-                                </div>
-                                <span class="tg-bookwriter">By: <a href="javascript:void(0);">Farrah Whisenhunt</a></span>
-                                <span class="tg-stars"><span></span></span>
-                                <div class="tg-priceandbtn">
-                                    <span class="tg-bookprice">
-                                        <ins>$23.18</ins>
-                                        <del>$30.20</del>
-                                    </span>
-                                    <a class="tg-btn tg-btnstyletwo tg-active" href="javascript:void(0);">
-                                        <i class="fa fa-shopping-basket"></i>
-                                        <em>Add To Basket</em>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="tg-productgrid">
-                <div class="tg-refinesearch">
-                    <span>showing 1 to 8 of 20 total</span>
-                    <form class="tg-formtheme tg-formsortshoitems">
-                        <fieldset>
-                            <div class="form-group">
-                                <label>sort by:</label>
-                                <span class="tg-select">
-                                    <select>
-                                        <option>name</option>
-                                        <option>name</option>
-                                        <option>name</option>
-                                    </select>
-                                </span>
-                            </div>
-                            <div class="form-group">
-                                <label>show:</label>
-                                <span class="tg-select">
-                                    <select>
-                                        <option>8</option>
-                                        <option>16</option>
-                                        <option>20</option>
-                                    </select>
-                                </span>
-                            </div>
-                        </fieldset>
-                    </form>
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
-                    <div class="tg-postbook">
-                        <figure class="tg-featureimg">
-                            <div class="tg-bookimg">
-                                <div class="tg-frontcover"><img src="/Content/Images/books/img-01.jpg" alt="image description"></div>
-                                <div class="tg-backcover"><img src="/Content/Images/books/img-01.jpg" alt="image description"></div>
-                            </div>
-                            <a class="tg-btnaddtowishlist" href="javascript:void(0);">
-                                <i class="icon-heart"></i>
-                                <span>add to wishlist</span>
-                            </a>
-                        </figure>
-                        <div class="tg-postbookcontent">
-                            <ul class="tg-bookscategories">
-                                <li><a href="javascript:void(0);">Art &amp; Photography</a></li>
-                            </ul>
-                            <div class="tg-themetagbox"><span class="tg-themetag">sale</span></div>
-                            <div class="tg-booktitle">
-                                <h3><a href="javascript:void(0);">Help Me Find My Stomach</a></h3>
-                            </div>
-                            <span class="tg-bookwriter">By: <a href="javascript:void(0);">Angela Gunning</a></span>
-                            <span class="tg-stars"><span></span></span>
-                            <span class="tg-bookprice">
-                                <ins>$25.18</ins>
-                                <del>$27.20</del>
-                            </span>
-                            <a class="tg-btn tg-btnstyletwo" href="javascript:void(0);">
-                                <i class="fa fa-shopping-basket"></i>
-                                <em>Add To Basket</em>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
-                    <div class="tg-postbook">
-                        <figure class="tg-featureimg">
-                            <div class="tg-bookimg">
-                                <div class="tg-frontcover"><img src="/Content/Images/books/img-02.jpg" alt="image description"></div>
-                                <div class="tg-backcover"><img src="/Content/Images/books/img-02.jpg" alt="image description"></div>
-                            </div>
-                            <a class="tg-btnaddtowishlist" href="javascript:void(0);">
-                                <i class="icon-heart"></i>
-                                <span>add to wishlist</span>
-                            </a>
-                        </figure>
-                        <div class="tg-postbookcontent">
-                            <ul class="tg-bookscategories">
-                                <li><a href="javascript:void(0);">Children’s Book</a></li>
-                            </ul>
-                            <div class="tg-themetagbox"><span class="tg-themetag">sale</span></div>
-                            <div class="tg-booktitle">
-                                <h3><a href="javascript:void(0);">Help Me Find My Stomach</a></h3>
-                            </div>
-                            <span class="tg-bookwriter">By: <a href="javascript:void(0);">Angela Gunning</a></span>
-                            <span class="tg-stars"><span></span></span>
-                            <span class="tg-bookprice">
-                                <ins>$25.18</ins>
-                                <del>$27.20</del>
-                            </span>
-                            <a class="tg-btn tg-btnstyletwo" href="javascript:void(0);">
-                                <i class="fa fa-shopping-basket"></i>
-                                <em>Add To Basket</em>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
-                    <div class="tg-postbook">
-                        <figure class="tg-featureimg">
-                            <div class="tg-bookimg">
-                                <div class="tg-frontcover"><img src="/Content/Images/books/img-03.jpg" alt="image description"></div>
-                                <div class="tg-backcover"><img src="/Content/Images/books/img-03.jpg" alt="image description"></div>
-                            </div>
-                            <a class="tg-btnaddtowishlist" href="javascript:void(0);">
-                                <i class="icon-heart"></i>
-                                <span>add to wishlist</span>
-                            </a>
-                        </figure>
-                        <div class="tg-postbookcontent">
-                            <ul class="tg-bookscategories">
-                                <li><a href="javascript:void(0);">Comic</a></li>
-                                <li><a href="javascript:void(0);">Adventure</a></li>
-                            </ul>
-                            <div class="tg-themetagbox"><span class="tg-themetag">sale</span></div>
-                            <div class="tg-booktitle">
-                                <h3><a href="javascript:void(0);">Help Me Find My Stomach</a></h3>
-                            </div>
-                            <span class="tg-bookwriter">By: <a href="javascript:void(0);">Angela Gunning</a></span>
-                            <span class="tg-stars"><span></span></span>
-                            <span class="tg-bookprice">
-                                <ins>$25.18</ins>
-                            </span>
-                            <a class="tg-btn tg-btnstyletwo" href="javascript:void(0);">
-                                <i class="fa fa-shopping-basket"></i>
-                                <em>Add To Basket</em>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
-                    <div class="tg-postbook">
-                        <figure class="tg-featureimg">
-                            <div class="tg-bookimg">
-                                <div class="tg-frontcover"><img src="/Content/Images/books/img-04.jpg" alt="image description"></div>
-                                <div class="tg-backcover"><img src="/Content/Images/books/img-04.jpg" alt="image description"></div>
-                            </div>
-                            <a class="tg-btnaddtowishlist" href="javascript:void(0);">
-                                <i class="icon-heart"></i>
-                                <span>add to wishlist</span>
-                            </a>
-                        </figure>
-                        <div class="tg-postbookcontent">
-                            <ul class="tg-bookscategories">
-                                <li><a href="javascript:void(0);">Fantacy &amp; Horor</a></li>
-                            </ul>
-                            <div class="tg-themetagbox"><span class="tg-themetag">sale</span></div>
-                            <div class="tg-booktitle">
-                                <h3><a href="javascript:void(0);">Help Me Find My Stomach</a></h3>
-                            </div>
-                            <span class="tg-bookwriter">By: <a href="javascript:void(0);">Angela Gunning</a></span>
-                            <span class="tg-stars"><span></span></span>
-                            <span class="tg-bookprice">
-                                <ins>$25.18</ins>
-                            </span>
-                            <a class="tg-btn tg-btnstyletwo" href="javascript:void(0);">
-                                <i class="fa fa-shopping-basket"></i>
-                                <em>Add To Basket</em>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
-                    <div class="tg-postbook">
-                        <figure class="tg-featureimg">
-                            <div class="tg-bookimg">
-                                <div class="tg-frontcover"><img src="/Content/Images/books/img-05.jpg" alt="image description"></div>
-                                <div class="tg-backcover"><img src="/Content/Images/books/img-05.jpg" alt="image description"></div>
-                            </div>
-                            <a class="tg-btnaddtowishlist" href="javascript:void(0);">
-                                <i class="icon-heart"></i>
-                                <span>add to wishlist</span>
-                            </a>
-                        </figure>
-                        <div class="tg-postbookcontent">
-                            <ul class="tg-bookscategories">
-                                <li><a href="javascript:void(0);">Children’s Book</a></li>
-                            </ul>
-                            <div class="tg-themetagbox"><span class="tg-themetag">sale</span></div>
-                            <div class="tg-booktitle">
-                                <h3><a href="javascript:void(0);">Help Me Find My Stomach</a></h3>
-                            </div>
-                            <span class="tg-bookwriter">By: <a href="javascript:void(0);">Angela Gunning</a></span>
-                            <span class="tg-stars"><span></span></span>
-                            <span class="tg-bookprice">
-                                <ins>$25.18</ins>
-                                <del>$27.20</del>
-                            </span>
-                            <a class="tg-btn tg-btnstyletwo" href="javascript:void(0);">
-                                <i class="fa fa-shopping-basket"></i>
-                                <em>Add To Basket</em>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
-                    <div class="tg-postbook">
-                        <figure class="tg-featureimg">
-                            <div class="tg-bookimg">
-                                <div class="tg-frontcover"><img src="/Content/Images/books/img-06.jpg" alt="image description"></div>
-                                <div class="tg-backcover"><img src="/Content/Images/books/img-06.jpg" alt="image description"></div>
-                            </div>
-                            <a class="tg-btnaddtowishlist" href="javascript:void(0);">
-                                <i class="icon-heart"></i>
-                                <span>add to wishlist</span>
-                            </a>
-                        </figure>
-                        <div class="tg-postbookcontent">
-                            <ul class="tg-bookscategories">
-                                <li><a href="javascript:void(0);">Comic</a></li>
-                                <li><a href="javascript:void(0);">Adventure</a></li>
-                            </ul>
-                            <div class="tg-themetagbox"><span class="tg-themetag">sale</span></div>
-                            <div class="tg-booktitle">
-                                <h3><a href="javascript:void(0);">Help Me Find My Stomach</a></h3>
-                            </div>
-                            <span class="tg-bookwriter">By: <a href="javascript:void(0);">Angela Gunning</a></span>
-                            <span class="tg-stars"><span></span></span>
-                            <span class="tg-bookprice">
-                                <ins>$25.18</ins>
-                            </span>
-                            <a class="tg-btn tg-btnstyletwo" href="javascript:void(0);">
-                                <i class="fa fa-shopping-basket"></i>
-                                <em>Add To Basket</em>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
-                    <div class="tg-postbook">
-                        <figure class="tg-featureimg">
-                            <div class="tg-bookimg">
-                                <div class="tg-frontcover"><img src="/Content/Images/books/img-07.jpg" alt="image description"></div>
-                                <div class="tg-backcover"><img src="/Content/Images/books/img-07.jpg" alt="image description"></div>
-                            </div>
-                            <a class="tg-btnaddtowishlist" href="javascript:void(0);">
-                                <i class="icon-heart"></i>
-                                <span>add to wishlist</span>
-                            </a>
-                        </figure>
-                        <div class="tg-postbookcontent">
-                            <ul class="tg-bookscategories">
-                                <li><a href="javascript:void(0);">Adventure</a></li>
-                                <li><a href="javascript:void(0);">Fiction</a></li>
-                            </ul>
-                            <div class="tg-themetagbox"><span class="tg-themetag">sale</span></div>
-                            <div class="tg-booktitle">
-                                <h3><a href="javascript:void(0);">Help Me Find My Stomach</a></h3>
-                            </div>
-                            <span class="tg-bookwriter">By: <a href="javascript:void(0);">Angela Gunning</a></span>
-                            <span class="tg-stars"><span></span></span>
-                            <span class="tg-bookprice">
-                                <ins>$25.18</ins>
-                                <del>$27.20</del>
-                            </span>
-                            <a class="tg-btn tg-btnstyletwo" href="javascript:void(0);">
-                                <i class="fa fa-shopping-basket"></i>
-                                <em>Add To Basket</em>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
-                    <div class="tg-postbook">
-                        <figure class="tg-featureimg">
-                            <div class="tg-bookimg">
-                                <div class="tg-frontcover"><img src="/Content/Images/books/img-08.jpg" alt="image description"></div>
-                                <div class="tg-backcover"><img src="/Content/Images/books/img-08.jpg" alt="image description"></div>
-                            </div>
-                            <a class="tg-btnaddtowishlist" href="javascript:void(0);">
-                                <i class="icon-heart"></i>
-                                <span>add to wishlist</span>
-                            </a>
-                        </figure>
-                        <div class="tg-postbookcontent">
-                            <ul class="tg-bookscategories">
-                                <li><a href="javascript:void(0);">Fantacy &amp; Horor</a></li>
-                            </ul>
-                            <div class="tg-themetagbox"><span class="tg-themetag">sale</span></div>
-                            <div class="tg-booktitle">
-                                <h3><a href="javascript:void(0);">Help Me Find My Stomach</a></h3>
-                            </div>
-                            <span class="tg-bookwriter">By: <a href="javascript:void(0);">Angela Gunning</a></span>
-                            <span class="tg-stars"><span></span></span>
-                            <span class="tg-bookprice">
-                                <ins>$25.18</ins>
-                            </span>
-                            <a class="tg-btn tg-btnstyletwo" href="javascript:void(0);">
-                                <i class="fa fa-shopping-basket"></i>
-                                <em>Add To Basket</em>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
-                    <div class="tg-postbook">
-                        <figure class="tg-featureimg">
-                            <div class="tg-bookimg">
-                                <div class="tg-frontcover"><img src="/Content/Images/books/img-09.jpg" alt="image description"></div>
-                                <div class="tg-backcover"><img src="/Content/Images/books/img-09.jpg" alt="image description"></div>
-                            </div>
-                            <a class="tg-btnaddtowishlist" href="javascript:void(0);">
-                                <i class="icon-heart"></i>
-                                <span>add to wishlist</span>
-                            </a>
-                        </figure>
-                        <div class="tg-postbookcontent">
-                            <ul class="tg-bookscategories">
-                                <li><a href="javascript:void(0);">Children’s Book</a></li>
-                            </ul>
-                            <div class="tg-themetagbox"><span class="tg-themetag">sale</span></div>
-                            <div class="tg-booktitle">
-                                <h3><a href="javascript:void(0);">Help Me Find My Stomach</a></h3>
-                            </div>
-                            <span class="tg-bookwriter">By: <a href="javascript:void(0);">Angela Gunning</a></span>
-                            <span class="tg-stars"><span></span></span>
-                            <span class="tg-bookprice">
-                                <ins>$25.18</ins>
-                                <del>$27.20</del>
-                            </span>
-                            <a class="tg-btn tg-btnstyletwo" href="javascript:void(0);">
-                                <i class="fa fa-shopping-basket"></i>
-                                <em>Add To Basket</em>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
-                    <div class="tg-postbook">
-                        <figure class="tg-featureimg">
-                            <div class="tg-bookimg">
-                                <div class="tg-frontcover"><img src="/Content/Images/books/img-10.jpg" alt="image description"></div>
-                                <div class="tg-backcover"><img src="/Content/Images/books/img-10.jpg" alt="image description"></div>
-                            </div>
-                            <a class="tg-btnaddtowishlist" href="javascript:void(0);">
-                                <i class="icon-heart"></i>
-                                <span>add to wishlist</span>
-                            </a>
-                        </figure>
-                        <div class="tg-postbookcontent">
-                            <ul class="tg-bookscategories">
-                                <li><a href="javascript:void(0);">Comic</a></li>
-                                <li><a href="javascript:void(0);">Adventure</a></li>
-                            </ul>
-                            <div class="tg-themetagbox"><span class="tg-themetag">sale</span></div>
-                            <div class="tg-booktitle">
-                                <h3><a href="javascript:void(0);">Help Me Find My Stomach</a></h3>
-                            </div>
-                            <span class="tg-bookwriter">By: <a href="javascript:void(0);">Angela Gunning</a></span>
-                            <span class="tg-stars"><span></span></span>
-                            <span class="tg-bookprice">
-                                <ins>$25.18</ins>
-                            </span>
-                            <a class="tg-btn tg-btnstyletwo" href="javascript:void(0);">
-                                <i class="fa fa-shopping-basket"></i>
-                                <em>Add To Basket</em>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
-                    <div class="tg-postbook">
-                        <figure class="tg-featureimg">
-                            <div class="tg-bookimg">
-                                <div class="tg-frontcover"><img src="/Content/Images/books/img-11.jpg" alt="image description"></div>
-                                <div class="tg-backcover"><img src="/Content/Images/books/img-11.jpg" alt="image description"></div>
-                            </div>
-                            <a class="tg-btnaddtowishlist" href="javascript:void(0);">
-                                <i class="icon-heart"></i>
-                                <span>add to wishlist</span>
-                            </a>
-                        </figure>
-                        <div class="tg-postbookcontent">
-                            <ul class="tg-bookscategories">
-                                <li><a href="javascript:void(0);">Adventure</a></li>
-                                <li><a href="javascript:void(0);">Fiction</a></li>
-                            </ul>
-                            <div class="tg-themetagbox"><span class="tg-themetag">sale</span></div>
-                            <div class="tg-booktitle">
-                                <h3><a href="javascript:void(0);">Help Me Find My Stomach</a></h3>
-                            </div>
-                            <span class="tg-bookwriter">By: <a href="javascript:void(0);">Angela Gunning</a></span>
-                            <span class="tg-stars"><span></span></span>
-                            <span class="tg-bookprice">
-                                <ins>$25.18</ins>
-                                <del>$27.20</del>
-                            </span>
-                            <a class="tg-btn tg-btnstyletwo" href="javascript:void(0);">
-                                <i class="fa fa-shopping-basket"></i>
-                                <em>Add To Basket</em>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
-                    <div class="tg-postbook">
-                        <figure class="tg-featureimg">
-                            <div class="tg-bookimg">
-                                <div class="tg-frontcover"><img src="/Content/Images/books/img-12.jpg" alt="image description"></div>
-                                <div class="tg-backcover"><img src="/Content/Images/books/img-12.jpg" alt="image description"></div>
-                            </div>
-                            <a class="tg-btnaddtowishlist" href="javascript:void(0);">
-                                <i class="icon-heart"></i>
-                                <span>add to wishlist</span>
-                            </a>
-                        </figure>
-                        <div class="tg-postbookcontent">
-                            <ul class="tg-bookscategories">
-                                <li><a href="javascript:void(0);">Adventure</a></li>
-                                <li><a href="javascript:void(0);">Fun</a></li>
-                            </ul>
-                            <div class="tg-themetagbox"><span class="tg-themetag">sale</span></div>
-                            <div class="tg-booktitle">
-                                <h3><a href="javascript:void(0);">Help Me Find My Stomach</a></h3>
-                            </div>
-                            <span class="tg-bookwriter">By: <a href="javascript:void(0);">Angela Gunning</a></span>
-                            <span class="tg-stars"><span></span></span>
-                            <span class="tg-bookprice">
-                                <ins>$25.18</ins>
-                            </span>
-                            <a class="tg-btn tg-btnstyletwo" href="javascript:void(0);">
-                                <i class="fa fa-shopping-basket"></i>
-                                <em>Add To Basket</em>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div id="tg-content" class="tg-content">
+		<div class="tg-products">
+			<div class="tg-sectionhead">
+				<h2><span>People’s Choice</span>Bestselling Books</h2>
+			</div>
+			<div class="tg-featurebook alert" role="alert">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<div class="tg-featureditm">
+					<div class="row">
+						<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 hidden-sm hidden-xs">
+							<figure><img src="/Content/Images/img-04.png" alt="image description"></figure>
+						</div>
+						<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+							<div class="tg-featureditmcontent">
+								<div class="tg-themetagbox"><span class="tg-themetag">featured</span></div>
+								<div class="tg-booktitle">
+									<h3><a href="javascript:void(0);">Things To Know About Green Flat Design</a></h3>
+								</div>
+								<span class="tg-bookwriter">By: <a href="javascript:void(0);">Farrah Whisenhunt</a></span>
+								<span class="tg-stars"><span></span></span>
+								<div class="tg-priceandbtn">
+									<span class="tg-bookprice">
+										<ins>$23.18</ins>
+										<del>$30.20</del>
+									</span>
+									<a class="tg-btn tg-btnstyletwo tg-active" href="javascript:void(0);">
+										<i class="fa fa-shopping-basket"></i>
+										<em>Add To Basket</em>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="tg-productgrid">
+				<div class="tg-refinesearch">
+					<span>Showing @((ViewBag.pageNumber - 1) * ViewBag.pageSize + 1) to @((ViewBag.pageNumber - 1) * ViewBag.pageSize + Model.Count) of @total total</span>
+					<form class="tg-formtheme tg-formsortshoitems">
+						<fieldset>
+							<div class="form-group">
+								<label>sort by:</label>
+								<span class="tg-select">
+									<select>
+										<option>name</option>
+										<option>name</option>
+										<option>name</option>
+									</select>
+								</span>
+							</div>
+							<div class="form-group">
+								<label>show:</label>
+								<span class="tg-select">
+									<select>
+										<option>8</option>
+										<option>16</option>
+										<option>20</option>
+									</select>
+								</span>
+							</div>
+						</fieldset>
+					</form>
+				</div>
+				@foreach (var product in Model)
+				{
+					<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
+						<div class="tg-postbook">
+							<figure class="tg-featureimg">
+								<div class="tg-bookimg">
+									<div class="tg-frontcover"><img src="/Content/Images/books/@product.Image" alt="image description"></div>
+									<div class="tg-backcover"><img src="/Content/Images/books/@product.Image" alt="image description"></div>
+								</div>
+								<a class="tg-btnaddtowishlist" href="javascript:void(0);">
+									<i class="icon-heart"></i>
+									<span>add to wishlist</span>
+								</a>
+							</figure>
+							<div class="tg-postbookcontent">
+								<ul class="tg-bookscategories">
+									<li><a href="javascript:void(0);">Art &amp; Photography</a></li>
+								</ul>
+								<div class="tg-themetagbox"><span class="tg-themetag">sale</span></div>
+								<div class="tg-booktitle">
+									<h3><a href="javascript:void(0);">@product.Name</a></h3>
+								</div>
+								<span class="tg-bookwriter">By: <a href="javascript:void(0);">Angela Gunning</a></span>
+								<span class="tg-stars"><span></span></span>
+								<span class="tg-bookprice">
+									<ins>$@product.Price</ins>
+								</span>
+								<a class="tg-btn tg-btnstyletwo" href="javascript:void(0);">
+									<i class="fa fa-shopping-basket"></i>
+									<em>Add To Basket</em>
+								</a>
+							</div>
+						</div>
+					</div>
+				}
+				@if (ViewBag.PageNumber > 1)
+				{
+					@Html.ActionLink("<< Trang trước", "Index", new { page = ViewBag.PageNumber - 1 })
+				}
+				@if (ViewBag.PageNumber < ViewBag.TotalPages)
+				{
+					@Html.ActionLink("Trang tiếp >>", "Index", new { page = ViewBag.PageNumber + 1 })
+				}
+			</div>
+		</div>
+	</div>
 </div>
 

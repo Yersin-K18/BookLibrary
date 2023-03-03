@@ -159,18 +159,17 @@
                                         <li>@Html.ActionLink("Contact", "Index", "ContactUs")</li>
                                         <li class="menu-item-has-children">
                                             <a href="javascript:void(0);"><i class="icon-menu"></i></a>
-                                            <ul class="sub-menu">
-                                                <li class="menu-item-has-children">
-                                                    @Html.ActionLink("Product", "Index", "AboutUs")
-                                                    <ul class="sub-menu">
+											<ul class="sub-menu">
+												<li class="menu-item-has-children">
+													@Html.ActionLink("Product", "Index", "Product")
+													<ul class="sub-menu">
 														<li>@Html.ActionLink("Product", "Index", "Product")</li>
-                                                        <li>@Html.ActionLink("Product Detail", "Index", "ProductDetail")                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li>@Html.ActionLink("AboutUs", "Index", "AboutUs")</li>
-                                                <li><a href="404error.html">404 Error</a></li>
-                                                <li>@Html.ActionLink("Coming Soon", "Index", "ComingSoon")</li>
-                                            </ul>
+														<li>@Html.ActionLink("Product Detail", "Index", "ProductDetail")                        </li>
+													</ul>
+												</li>
+												<li>@Html.ActionLink("AboutUs", "Index", "AboutUs")</li>
+												<li>@Html.ActionLink("Coming Soon", "Index", "ComingSoon")</li>
+											</ul>
                                         </li>
                                     </ul>
                                 </div>

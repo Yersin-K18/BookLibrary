@@ -11,9 +11,9 @@ namespace BookLibrary.Models
         {
             return db.Products.OrderByDescending(a => a.Name).Take(count).ToList();
         }
-        /*static public List<Product> list_pickedByAuthor(int count)
+        static public int NumberBook()
         {
-
-        }*/
+            return db.Products.Count();
+        }
     }
 }

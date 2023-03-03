@@ -94,7 +94,7 @@
                                     <div id="tg-navigation" class="collapse navbar-collapse tg-navigation">
                                         <ul>
                                             <li class="menu-item-has-children menu-item-has-mega-menu">
-                                                <a href="javascript:void(0);">Thể loại</a>
+                                                <a href="javascript:void(0);">Thể Loại</a>
                                                 @Html.Action("menu_Category", "Home")
                                             </li>
                                             <li class="menu-item-has-children current-menu-item">
@@ -121,15 +121,14 @@
                                             <li class="menu-item-has-children">
                                                 <a href="javascript:void(0);"><i class="icon-menu"></i></a>
                                                 <ul class="sub-menu">
-                                                    <li class="menu-item-has-children">
-                                                        <a href="aboutus.html">Products</a>
-                                                        <ul class="sub-menu">
-                                                            <li><a href="products.html">Products</a></li>
-                                                            <li>@Html.ActionLink("Product Detail", "Index", "ProductDetail")</li>
-                                                        </ul>
-                                                    </li>
+													<li class="menu-item-has-children">
+														@Html.ActionLink("Products", "Index", "Product")
+														<ul class="sub-menu">
+															<li>@Html.ActionLink("Products", "Index", "Product")</li>
+															<li>@Html.ActionLink("Product Detail", "Index", "ProductDetail")</li>
+														</ul>
+													</li>
                                                     <li>@Html.ActionLink("AboutUs", "Index", "AboutUs")</li>
-                                                    <li><a href="404error.html">404 Error</a></li>
                                                     <li>@Html.ActionLink("Coming Soon", "Index", "ComingSoon")</li>
                                                 </ul>
                                             </li>
@@ -169,7 +168,6 @@
                                                     <i>£</i>
                                                     <span>British Pound</span>
                                                 </a>
-                                            </li>
                                             <li>
                                                 <a href="javascript:void(0);">
                                                     <i>€</i>

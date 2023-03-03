@@ -113,14 +113,13 @@
                                                 <a href="javascript:void(0);"><i class="icon-menu"></i></a>
                                                 <ul class="sub-menu">
                                                     <li class="menu-item-has-children">
-                                                        <a href="aboutus.html">Products</a>
+                                                        <a href="@Url.Action("Index", "Product")">Products</a>
                                                         <ul class="sub-menu">
-                                                            <li><a href="products.html">Products</a></li>
+                                                            <li>@Html.ActionLink("Product", "Index", "Product")</li>
                                                             <li>@Html.ActionLink("Product Detail", "Index", "ProductDetail")</li>
                                                         </ul>
                                                     </li>
                                                     <li>@Html.ActionLink("AboutUs", "Index", "AboutUs")</li>
-                                                    <li><a href="404error.html">404 Error</a></li>
                                                     <li>@Html.ActionLink("Coming Soon", "Index", "ComingSoon")</li>
                                                 </ul>
                                             </li>
@@ -160,7 +159,6 @@
                                                     <i>£</i>
                                                     <span>British Pound</span>
                                                 </a>
-                                            </li>
                                             <li>
                                                 <a href="javascript:void(0);">
                                                     <i>€</i>

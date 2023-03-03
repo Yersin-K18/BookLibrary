@@ -1,0 +1,62 @@
+﻿
+<div class="tg-navigationarea">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<nav id="tg-nav" class="tg-nav">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#tg-navigation" aria-expanded="false">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+					<div id="tg-navigation" class="collapse navbar-collapse tg-navigation">
+						<ul>
+							<li class="menu-item-has-children menu-item-has-mega-menu">
+								<a href="javascript:void(0);">Thể Loại</a>
+								@Html.Action("menu_Category", "Home")
+							</li>
+							<li class="menu-item-has-children">
+								@Html.Partial("NavigationMenuHome")
+							</li>
+							<li class="menu-item-has-children">
+								<a href="javascript:void(0);">Authors</a>
+								<ul class="sub-menu">
+									<li>@Html.ActionLink("Author", "Index", "Author")</li>
+									<li>@Html.ActionLink("Author Detail", "Index", "AuthorDetail")</li>
+								</ul>
+							</li>
+							<li>@Html.ActionLink("Best Selling", "Index", "Product")</li>
+							<li>@Html.ActionLink("Weekly Sale", "Index", "Product")</li>
+							<li class="menu-item-has-children current-menu-item">
+								<a href="javascript:void(0);">Latest News</a>
+								<ul class="sub-menu">
+									<li class="current-menu-item">@Html.ActionLink("News List", "Index", "NewsList")</li>
+									<li>@Html.ActionLink("News Grid", "Index", "NewGrid")</li>
+									<li>@Html.ActionLink("News Detail", "Index", "NewDetail")</li>
+								</ul>
+							</li>
+							<li>@Html.ActionLink("Contact", "Index", "ContactUs")</li>
+							<li class="menu-item-has-children">
+								<a href="javascript:void(0);"><i class="icon-menu"></i></a>
+								<ul class="sub-menu">
+									<li class="menu-item-has-children">
+										@Html.ActionLink("Product", "Index", "Product")
+										<ul class="sub-menu">
+											<li>@Html.ActionLink("Product", "Index", "Product")</li>
+											<li>@Html.ActionLink("Product Detail", "Index", "ProductDetail")                        </li>
+										</ul>
+									</li>
+									<li>@Html.ActionLink("AboutUs", "Index", "AboutUs")</li>
+									<li>@Html.ActionLink("Coming Soon", "Index", "ComingSoon")</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</div>
+</div>

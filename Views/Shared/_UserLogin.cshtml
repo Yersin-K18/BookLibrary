@@ -1,11 +1,23 @@
-﻿@{ 
+﻿@using BookLibrary.Models 
+@{ 
     string name = ViewBag.UserName;
+	User user = (User)Session["User"];
 }
-<div class="tg-userlogin">
-    <figure>
-        <a href="@Url.Action("DangNhap", "LoginAndRegister")">
-            <img src="/Content/Images/users/img-01.jpg" alt="image description">
-        </a>
-    </figure>
-    <span>Hi @name</span>
+<div class="tg-userlogin" style="position: relative;">
+	<figure>
+		<a href="@Url.Action("DangNhap", "LoginAndRegister")">
+			<img src="/Content/Images/users/img-01.jpg" alt="image description">
+		</a>
+	</figure>
+	<span>Hi @name</span>
+	<ul class="sub-menu-login hidden">
+		@if (user is null)
+		{
+			<li>@Html.ActionLink("Login", "DangNhap", "LoginAndRegister")</li>
+		}
+		else
+		{
+			<li id="logout">@Html.ActionLink("Logout", "Logout", "Admin")</li>
+		}
+	</ul>
 </div>

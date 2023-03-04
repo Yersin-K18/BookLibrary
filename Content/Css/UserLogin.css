@@ -1,0 +1,31 @@
+﻿.tg-userlogin span {
+	cursor: pointer;
+}
+
+.sub-menu-login {
+	top: 70px;
+	left: 0;
+	margin: 0;
+	width: 100%;
+	text-align: left;
+	background: #fff;
+	position: absolute;
+	box-shadow: 0 0 10px 0 rgb(0 0 0 / 20%);
+	-webkit-box-shadow: 0 0 10px 0 rgb(0 0 0 / 20%);
+	font: 400 13px/40px 'Open Sans', Arial, Helvetica, sans-serif !important;
+	z-index: 3;
+}
+
+.tg-userlogin ul li {
+	cursor: pointer;
+	list-style-type: none;
+}
+
+.sub-menu-login li a {
+	color: #666666;
+	font-family: Open Sans; 
+	font-size: 13px; 
+	line-height: 40px; 
+	padding: 0px 20px; 
+	text-align: left;
+}

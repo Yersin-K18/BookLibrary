@@ -36,7 +36,7 @@ namespace BookLibrary.Controllers
         public ActionResult Logout()
         {
             Session["user"] = null;
-            return RedirectToAction("Index","Admin");
+            return RedirectToAction("Index", "Home");
         }
     }
 }

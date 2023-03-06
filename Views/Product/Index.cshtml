@@ -47,30 +47,6 @@
 			<div class="tg-productgrid">
 				<div class="tg-refinesearch">
 					<span>Showing @((ViewBag.pageNumber - 1) * ViewBag.pageSize + 1) to @((ViewBag.pageNumber - 1) * ViewBag.pageSize + Model.Count) of @total total</span>
-					<form class="tg-formtheme tg-formsortshoitems">
-						<fieldset>
-							<div class="form-group">
-								<label>sort by:</label>
-								<span class="tg-select">
-									<select>
-										<option>name</option>
-										<option>name</option>
-										<option>name</option>
-									</select>
-								</span>
-							</div>
-							<div class="form-group">
-								<label>show:</label>
-								<span class="tg-select">
-									<select>
-										<option>8</option>
-										<option>16</option>
-										<option>20</option>
-									</select>
-								</span>
-							</div>
-						</fieldset>
-					</form>
 				</div>
 				@foreach (var product in Model)
 				{
@@ -99,7 +75,7 @@
 								<span class="tg-bookprice">
 									<ins>$@product.Price</ins>
 								</span>
-								<a class="tg-btn tg-btnstyletwo" href="javascript:void(0);">
+								<a class="tg-btn tg-btnstyletwo" href="@Url.Action("AddCart","ShoppingCart", new {@BookID = product.ID, @strURL = Request.Url.ToString()})">
 									<i class="fa fa-shopping-basket"></i>
 									<em>Add To Basket</em>
 								</a>
@@ -109,11 +85,11 @@
 				}
 				@if (ViewBag.PageNumber > 1)
 				{
-					@Html.ActionLink("<< Trang trước", "Index", new { page = ViewBag.PageNumber - 1 })
+					@Html.ActionLink("<< Previous Page", "Index", new { page = ViewBag.PageNumber - 1 })
 				}
 				@if (ViewBag.PageNumber < ViewBag.TotalPages)
 				{
-					@Html.ActionLink("Trang tiếp >>", "Index", new { page = ViewBag.PageNumber + 1 })
+					@Html.ActionLink("Next Page >>", "Index", new { page = ViewBag.PageNumber + 1 })
 				}
 			</div>
 		</div>

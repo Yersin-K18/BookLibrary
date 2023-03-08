@@ -1,0 +1,42 @@
+﻿@using BookLibrary.Models
+@{
+	HashSet<Product> wishlist = Session["WishList"] as HashSet<Product>;
+	if (wishlist is null)
+	{
+		wishlist = new HashSet<Product>();
+	}
+}
+
+<div class="dropdown tg-themedropdown tg-wishlistdropdown">
+	<a href="javascript:void(0);" id="tg-wishlisst" class="tg-btnthemedropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<span class="tg-themebadge">@wishlist.Count</span>
+		<i class="icon-heart"></i>
+		<span>Wishlist</span>
+	</a>
+	<div class="dropdown-menu tg-themedropdownmenu" aria-labelledby="tg-wishlisst">
+		<div class="tg-description">
+			@if (wishlist.Count == 0)
+			{
+				<p>No Book !</p>
+			}
+			else
+			{
+				foreach (var item in wishlist)
+				{
+					<div class="tg-minicarproduct">
+						<figure>
+							<img style="width: 70px; height: 90px " src="~/Content/Images/books/@item.Image" alt="image description">
+						</figure>
+						<div class="tg-minicarproductdata">
+							<h5>
+								<a href="javascript:void(0);">@item.Name</a>
+							</h5>
+						</div>
+					</div>
+				}
+			}
+		</div>
+	</div>
+</div>
+
+<script src="~/Scripts/WishListJS.js"></script>

@@ -19,5 +19,10 @@ namespace BookLibrary.Models
         {
             return db.Products.Count();
         }
+
+        static public Product FindById(int id)
+        {
+            return db.Products.Find(id);
+        }
     }
 }

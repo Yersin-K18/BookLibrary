@@ -91,22 +91,13 @@
                                 </a>
                             </strong>
                             <div class="tg-wishlistandcart">
-                                <div class="dropdown tg-themedropdown tg-wishlistdropdown">
-                                    <a href="javascript:void(0);" id="tg-wishlisst" class="tg-btnthemedropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <span class="tg-themebadge">3</span>
-                                        <i class="icon-heart"></i>
-                                        <span>Wishlist</span>
-                                    </a>
-                                    <div class="dropdown-menu tg-themedropdownmenu" aria-labelledby="tg-wishlisst">
-                                        <div class="tg-description"><p>No Book !</p></div>
-                                    </div>
-                                </div>
-                                @Html.Action("_CartPartial","ShoppingCart")
+                                @Html.Partial("_WishList")
+                                @Html.Action("_CartPartial", "ShoppingCart")
                             </div>
                             <div class="tg-searchbox">
                                 <form class="tg-formtheme tg-formsearch">
                                     <fieldset>
-                                        <input type="text" name="search" class="typeahead form-control" placeholder="Tìm kiếm theo tựa sách, tên tác giả, từ khóa, ...">
+                                        <input type="text" name="search" class="typeahead form-control" placeholder="Tìm kiếm theo tựa sách, tên tác giả, từ khóa,...">
                                         <button type="submit"><i class="icon-magnifier"></i></button>
                                     </fieldset>
                                     <a href="javascript:void(0);">+  Tìm kiếm nâng cao</a>
@@ -116,7 +107,6 @@
                     </div>
                 </div>
             </div>
-
             @Html.Partial("_NavigationArea")
         </header>
     <!--************************************

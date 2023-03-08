@@ -171,6 +171,7 @@
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\ProductDetailController.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />
+    <Compile Include="Controllers\WishListController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -2962,6 +2963,7 @@
     <Content Include="Scripts\vendor\bootstrap.min.js" />
     <Content Include="Scripts\vendor\jquery-library.js" />
     <Content Include="Scripts\vendor\modernizr-2.8.3-respond-1.4.2.min.js" />
+    <Content Include="Scripts\WishListJS.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -3036,6 +3038,7 @@
     <Content Include="Views\AdminProducts\Edit.cshtml" />
     <Content Include="Views\AdminProducts\Index.cshtml" />
     <Content Include="Views\Shared\_NavigationArea.cshtml" />
+    <Content Include="Views\Shared\_WishList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

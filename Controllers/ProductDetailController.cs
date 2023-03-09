@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using BookLibrary.Models;
 using System.Web.Mvc;
 
 namespace BookLibrary.Controllers
@@ -9,9 +6,9 @@ namespace BookLibrary.Controllers
     public class ProductDetailController : Controller
     {
         // GET: ProductDetail
-        public ActionResult Index()
+        public ActionResult Index(int id)
         {
-            return View();
+            return View(ProductsModel.FindById(id));
         }
     }
 }

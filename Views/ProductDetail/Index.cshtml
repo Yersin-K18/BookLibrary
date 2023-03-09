@@ -1,4 +1,4 @@
-﻿
+﻿@model BookLibrary.Models.Product
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -14,9 +14,9 @@
                 <div class="tg-innerbannercontent">
                     <h1>All Products</h1>
                     <ol class="tg-breadcrumb">
-                        <li><a href="javascript:void(0);">home</a></li>
-                        <li><a href="javascript:void(0);">Products</a></li>
-                        <li class="tg-active">Product Title Here</li>
+                        <li><a href="@Url.Action("Index", "Home")">home</a></li>
+                        <li><a href="@Url.Action("Index", "Product")">Products</a></li>
+                        <li class="tg-active">@Model.Name</li>
                     </ol>
                 </div>
             </div>
@@ -39,7 +39,7 @@
                 <div id="tg-twocolumns" class="tg-twocolumns">
                     <div class="col-xs-12 col-sm-8 col-md-8 col-lg-9 pull-right">
                         <div id="tg-content" class="tg-content">
-                            <div class="tg-featurebook alert" role="alert">
+                            @*<div class="tg-featurebook alert" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
@@ -70,18 +70,18 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div>*@
                             <div class="tg-productdetail">
                                 <div class="row">
                                     <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                                         <div class="tg-postbook">
-                                            <figure class="tg-featureimg"><img src="~/Content/images/books/img-07.jpg" alt="image description"></figure>
+                                            <figure class="tg-featureimg"><img src="~/Content/images/books/@Model.Image" alt="image description"></figure>
                                             <div class="tg-postbookcontent">
                                                 <span class="tg-bookprice">
-                                                    <ins>$25.18</ins>
-                                                    <del>$27.20</del>
+                                                    <ins>$@Model.Price</ins>
+                                                    @*<del>$27.20</del>*@
                                                 </span>
-                                                <span class="tg-bookwriter">You save $4.02</span>
+                                                @*<span class="tg-bookwriter">You save $4.02</span>*@
                                                 <ul class="tg-delevrystock">
                                                     <li><i class="icon-rocket"></i><span>Free delivery worldwide</span></li>
                                                     <li><i class="icon-checkmark-circle"></i><span>Dispatch from the USA in 2 working days </span></li>
@@ -106,7 +106,7 @@
                                             </ul>
                                             <div class="tg-themetagbox"><span class="tg-themetag">sale</span></div>
                                             <div class="tg-booktitle">
-                                                <h3>Drive Safely, No Bumping</h3>
+                                                <h3>@Model.Name</h3>
                                             </div>
                                             <span class="tg-bookwriter">By: <a href="javascript:void(0);">Angela Gunning</a></span>
                                             <span class="tg-stars"><span></span></span>
@@ -122,8 +122,7 @@
                                                 </ul>
                                             </div>
                                             <div class="tg-description">
-                                                <p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore etdoloreat magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laborisi nisi ut aliquip ex ea commodo consequat aute.</p>
-                                                <p>Arure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla aetur excepteur sint occaecat cupidatat non proident, sunt in culpa quistan officia serunt mollit anim id est laborum sed ut perspiciatis unde omnis iste natus... <a href="javascript:void(0);">More</a></p>
+                                                <p>@Model.Description</p>
                                             </div>
                                             <div class="tg-sectionhead">
                                                 <h2>Product Details</h2>

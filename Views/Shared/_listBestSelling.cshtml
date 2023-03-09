@@ -27,7 +27,7 @@
                             <div class="tg-themetagbox"><span class="tg-themetag">Sale</span></div>
                             <div class="tg-booktitle">
                                 <h3>
-                                    <a href="javascript:void(0);">
+                                    <a href="@Url.Action("Index", "ProductDetail", new {@id = itemBSL.ID})">
                                         @if (@itemBSL.Name.Length > 25)
                                         { tam = @itemBSL.Name.Substring(0, 25) + "..."; }
                                         else

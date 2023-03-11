@@ -19,10 +19,17 @@ namespace BookLibrary.Models
         {
             return db.Products.Count();
         }
-
         static public Product FindById(int id)
         {
             return db.Products.Find(id);
+        }
+        static public List<Product> FindByName(string Query)
+        {
+            List<Product> result = new List<Product>();
+            result = db.Products
+                    .Where(p => p.Name.Contains(Query))
+                    .ToList();
+            return result;
         }
     }
 }

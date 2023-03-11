@@ -52,7 +52,6 @@ window.addEventListener('load',
                     res.text().then(html => {
                         const parser = new DOMParser();
                         const newDocument = parser.parseFromString(html, 'text/html');
-                        console.log(newDocument.body)
                         wishlistButton.innerHTML = newDocument.body.querySelector("div").innerHTML;
                     })
                 })

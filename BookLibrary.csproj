@@ -170,6 +170,7 @@
     <Compile Include="Controllers\NewsListController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\ProductDetailController.cs" />
+    <Compile Include="Controllers\Services\SearchController.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Controllers\WishListController.cs" />
     <Compile Include="Global.asax.cs">
@@ -2961,6 +2962,7 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\owl.carousel.min.js" />
     <Content Include="Scripts\parallax.js" />
+    <Content Include="Scripts\PreSearch.js" />
     <Content Include="Scripts\SubMenu.js" />
     <Content Include="Scripts\vendor\bootstrap.min.js" />
     <Content Include="Scripts\vendor\jquery-library.js" />
@@ -3041,6 +3043,9 @@
     <Content Include="Views\AdminProducts\Index.cshtml" />
     <Content Include="Views\Shared\_NavigationArea.cshtml" />
     <Content Include="Views\Shared\_WishList.cshtml" />
+    <Content Include="Views\Shared\_Search.cshtml" />
+    <Content Include="Views\Search\_PreView.cshtml" />
+    <Content Include="Views\Search\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -95,15 +95,7 @@
                                 @Html.Partial("_WishList")
                                 @Html.Action("_CartPartial", "ShoppingCart")
                             </div>
-                            <div class="tg-searchbox">
-                                <form class="tg-formtheme tg-formsearch">
-                                    <fieldset>
-                                        <input type="text" name="search" class="typeahead form-control" placeholder="Tìm kiếm theo tựa sách, tên tác giả, từ khóa,...">
-                                        <button type="submit"><i class="icon-magnifier"></i></button>
-                                    </fieldset>
-                                    <a href="javascript:void(0);">+  Tìm kiếm nâng cao</a>
-                                </form>
-                            </div>
+                            @Html.Partial("_Search")
                         </div>
                     </div>
                 </div>

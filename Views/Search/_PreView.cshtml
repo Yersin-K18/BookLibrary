@@ -1,0 +1,25 @@
+﻿@using BookLibrary.Models
+@{
+	List<Product> results = ProductsModel.FindByName(ViewBag.Query);
+}
+
+
+<div class="dropdown-menu tg-themedropdownmenu" aria-labelledby="tg-minicart">
+	@foreach (Product product in results)
+	{
+		<div class="tg-minicartbody" style="padding: 0 10px 0 10px; background-color: white;">
+			<div class="tg-minicarproduct" style="padding: 5px 0 5px 0; cursor: pointer;">
+				<figure>
+					<a href="@Url.Action("Index", "ProductDetail", new {id = product.ID})">
+						<img style="width: 70px; height: 90px;" src="/Content/Images/books/@product.Image" alt="image description">
+					</a>
+				</figure>
+				<div class="tg-minicarproductdata" style="float: right;">
+					<h6><a href="@Url.Action("Index", "ProductDetail", new {id = product.ID})">@product.Name</a></h6>
+					<h6><a href="@Url.Action("Index", "ProductDetail", new {id = product.ID})">$@product.Price</a></h6>
+				</div>
+			</div>
+		</div>
+	}
+</div>	
+

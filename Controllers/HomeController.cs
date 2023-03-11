@@ -22,6 +22,11 @@ namespace BookLibrary.Controllers
 
             return PartialView("_listBestSelling", db.Products);
         }
+        public ActionResult get_pickByAuthors()
+        {
+
+            return PartialView("_pickByAuthors", db.Products);
+        }
         public ActionResult Index_v1()
         {
             return View();

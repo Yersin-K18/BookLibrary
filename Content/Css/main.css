@@ -2687,6 +2687,7 @@ li.menu-item-has-mega-menu { position: static; }
 	margin:-8px 0 0 0;
 }
 .tg-widget.tg-catagories ul li{padding:11px 10px;}
+.tg-widget.tg-catagories ul li.tg-loadmore{padding:0;}
 .tg-widget.tg-widgettrending ul{padding:15px 0 0;}
 .tg-widget.tg-widgettrending ul li{
 	border:0;

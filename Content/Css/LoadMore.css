@@ -1,0 +1,16 @@
+﻿.tg-widgetcontent li:nth-child(n+11) {
+    display: none;
+}
+.load-more {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
+.load-more span 
+{
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #333;
+        color: #fff;
+        cursor: pointer;
+    }

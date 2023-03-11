@@ -2733,6 +2733,7 @@
     <Content Include="Content\css\font-awesome.min.css" />
     <Content Include="Content\css\icomoon.css" />
     <Content Include="Content\css\jquery-ui.css" />
+    <Content Include="Content\css\LoadMore.css" />
     <Content Include="Content\css\LoginAdmin.css" />
     <Content Include="Content\css\LoginAndRegister.css" />
     <Content Include="Content\css\main.css" />
@@ -2945,6 +2946,7 @@
     <None Include="Properties\PublishProfiles\hoang3409-001-site1 - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\hoang3409-001-site1 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.6.3.intellisense.js" />
+    <Content Include="Scripts\LoadMore.js" />
     <Content Include="Scripts\jquery-3.6.3.js" />
     <Content Include="Scripts\jquery-3.6.3.min.js" />
     <Content Include="Scripts\jquery-3.6.3.slim.js" />

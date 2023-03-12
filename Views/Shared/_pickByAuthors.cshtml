@@ -16,19 +16,18 @@
                 <figure class="tg-featureimg">
                     <div class="tg-bookimg">
                         <div class="tg-frontcover"><img src="~/Content/Images/books/@itemBSL.Image" alt="image description"></div>
-                        <div class="tg-backcover"><img src="~/Content/Images/books/@itemBSL.Image" alt="image description"></div>
                     </div>
-                    <a class="tg-btnaddtowishlist" href="javascript:void(0)" bookid=@itemBSL.ID>
-                        <i class="icon-heart"></i>
-                        <span>add to wishlist</span>
-                    </a>
+                    <div class="tg-hovercontent">
+                        <div class="tg-description">
+                            <p>@itemBSL.Description</p>
+                        </div>
+                        <strong class="tg-bookpage">Book Pages: 206</strong>
+                        <strong class="tg-bookcategory">Category: Adventure, Fun</strong>
+                        <strong class="tg-bookprice">Price: $23.18</strong>
+                        <div class="tg-ratingbox"><span class="tg-stars"><span></span></span></div>
+                    </div>
                 </figure>
                 <div class="tg-postbookcontent">
-                    <ul class="tg-bookscategories">
-                        <li><a href="javascript:void(0);">@itemBSL.Description</a></li>
-
-                    </ul>
-                    <div class="tg-themetagbox"><span class="tg-themetag">Sale</span></div>
                     <div class="tg-booktitle">
                         <h3>
                             <a href="@Url.Action("Index", "ProductDetail", new {@id = itemBSL.ID})">
@@ -38,14 +37,9 @@
                                 { tam = @itemBSL.Name; }
                                 @tam
                             </a>
-                        </h3>
+                            </h3>
                     </div>
-                    <span class="tg-bookwriter">By: <a href="javascript:void(0);">Angela Gunning</a></span>
-                    <span class="tg-stars"><span></span></span>
-                    <span class="tg-bookprice">
-                        <ins>$@itemBSL.Price</ins>
-                        <del>$27.20</del>
-                    </span>
+                    <span class="tg-bookwriter">By: <a href="javascript:void(0);">Sunshine Orlando</a></span>
                     <a class="tg-btn tg-btnstyletwo" href="@Url.Action("AddCart","ShoppingCart", new {@BookID = itemBSL.ID, @strURL = Request.Url.ToString()})">
                         <i class="fa fa-shopping-basket"></i>
                         <em>Add To Cart</em>

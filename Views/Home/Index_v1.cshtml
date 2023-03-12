@@ -232,11 +232,11 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="tg-sectionhead">
-                        <h2><span>People’s Choice</span>Bestselling</h2>
+                        <h2><span>Some Great Books</span>Picked By Authors</h2>
                         @Html.ActionLink("View All", "Index", "Product", null, new { @class = "tg-btn" })
                     </div>
                 </div>
-                @Html.Action("get_pickByAuthors", "Home")
+                @Html.Action("get_pickByAuthors","Home")
             </div>
         </div>
     </section>

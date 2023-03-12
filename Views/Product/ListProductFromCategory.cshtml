@@ -1,0 +1,55 @@
+﻿@model IEnumerable<BookLibrary.Models.Product>
+@{
+    ViewBag.Title = "ListProductFromCategory";
+    Layout = "~/Views/Shared/_LayoutProducts.cshtml";
+}
+
+<div class="col-xs-12 col-sm-8 col-md-8 col-lg-9 pull-right">
+    <div id="tg-content" class="tg-content">
+        <div class="tg-products">
+            <div class="tg-sectionhead">
+                <h2><span>People’s Choice</span>Bestselling Books</h2>
+            </div>
+            
+            <div class="tg-productgrid">
+                <div class="tg-refinesearch"></div>
+                @foreach (var product in Model)
+                {
+                    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
+                        <div class="tg-postbook">
+                            <figure class="tg-featureimg">
+                                <div class="tg-bookimg">
+                                    <div class="tg-frontcover"><img src="~/Content/Images/books/@product.Image" alt="image description"></div>
+                                    <div class="tg-backcover"><img src="~/Content/Images/books/@product.Image" alt="image description"></div>
+                                </div>
+                                <a class="tg-btnaddtowishlist" href="javascript:void(0);">
+                                    <i class="icon-heart"></i>
+                                    <span>add to wishlist</span>
+                                </a>
+                            </figure>
+                            <div class="tg-postbookcontent">
+                                <ul class="tg-bookscategories">
+                                    <li><a href="javascript:void(0);">Art &amp; Photography</a></li>
+                                </ul>
+                                <div class="tg-themetagbox"><span class="tg-themetag">sale</span></div>
+                                <div class="tg-booktitle">
+                                    <h3><a href="javascript:void(0);">@product.Name</a></h3>
+                                </div>
+                                <span class="tg-bookwriter">By: <a href="javascript:void(0);">Angela Gunning</a></span>
+                                <span class="tg-stars"><span></span></span>
+                                <span class="tg-bookprice">
+                                    <ins>$@product.Price</ins>
+                                </span>
+                                <a class="tg-btn tg-btnstyletwo" href="@Url.Action("AddCart","ShoppingCart", new {@BookID = product.ID, @strURL = Request.Url.ToString()})">
+                                    <i class="fa fa-shopping-basket"></i>
+                                    <em>Add To Basket</em>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                }
+                
+            </div>
+        </div>
+    </div>
+</div>

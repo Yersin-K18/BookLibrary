@@ -3,20 +3,19 @@
 
 <div class="tg-widget tg-catagories">
     <div class="tg-widgettitle">
-        <h3>Thể loại</h3>
+        <h3>Category</h3>
     </div>
     <div class="tg-widgetcontent">
         <ul>
             @foreach (var item in Model)
             {
                 <li>
-                    <a href="@Url.Action(@item.Tag, "Product")">
+                    <a href="@Url.Action("ListProductFromCategory","Product",new {id = item.id})">
                         <span>@item.Name</span>
-                        <em>none</em>
+                       
                     </a>
                 </li>
             }
-            <li><a href="javascript:void(0);"><span>Xem Thêm</span></a></li>
         </ul>
     </div>
 </div>

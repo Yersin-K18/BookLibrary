@@ -1,55 +1,60 @@
-﻿@{ 
-	List<BookLibrary.Models.Product> productsPickByAuthours = BookLibrary.Models.ProductsModel.list_pickedByAuthor();
+﻿@model IEnumerable<BookLibrary.Models.Product>
+@{
+    List<BookLibrary.Models.Product> productsPickByAuthours = BookLibrary.Models.ProductsModel.list_pickedByAuthor();
+    string tam = "";
 }
 
 <!--************************************
             Picked By Author Start
     *************************************-->
-<section class="tg-sectionspace tg-haslayout">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <div class="tg-sectionhead">
-                    <h2><span>Some Great Books</span>Picked By Authors</h2>
-                    <a class="tg-btn" href="@Url.Action("Index", "Product")">View All</a>
+
+<div id="tg-pickedbyauthorslider" class="tg-pickedbyauthor tg-pickedbyauthorslider owl-carousel">
+    @foreach (var itemBSL in productsPickByAuthours)
+    {
+        <div class="item">
+            <div class="tg-postbook">
+                <figure class="tg-featureimg">
+                    <div class="tg-bookimg">
+                        <div class="tg-frontcover"><img src="~/Content/Images/books/@itemBSL.Image" alt="image description"></div>
+                        <div class="tg-backcover"><img src="~/Content/Images/books/@itemBSL.Image" alt="image description"></div>
+                    </div>
+                    <a class="tg-btnaddtowishlist" href="javascript:void(0)" bookid=@itemBSL.ID>
+                        <i class="icon-heart"></i>
+                        <span>add to wishlist</span>
+                    </a>
+                </figure>
+                <div class="tg-postbookcontent">
+                    <ul class="tg-bookscategories">
+                        <li><a href="javascript:void(0);">@itemBSL.Description</a></li>
+
+                    </ul>
+                    <div class="tg-themetagbox"><span class="tg-themetag">Sale</span></div>
+                    <div class="tg-booktitle">
+                        <h3>
+                            <a href="@Url.Action("Index", "ProductDetail", new {@id = itemBSL.ID})">
+                                @if (@itemBSL.Name.Length > 25)
+                                { tam = @itemBSL.Name.Substring(0, 25) + "..."; }
+                                else
+                                { tam = @itemBSL.Name; }
+                                @tam
+                            </a>
+                        </h3>
+                    </div>
+                    <span class="tg-bookwriter">By: <a href="javascript:void(0);">Angela Gunning</a></span>
+                    <span class="tg-stars"><span></span></span>
+                    <span class="tg-bookprice">
+                        <ins>$@itemBSL.Price</ins>
+                        <del>$27.20</del>
+                    </span>
+                    <a class="tg-btn tg-btnstyletwo" href="@Url.Action("AddCart","ShoppingCart", new {@BookID = itemBSL.ID, @strURL = Request.Url.ToString()})">
+                        <i class="fa fa-shopping-basket"></i>
+                        <em>Add To Cart</em>
+                    </a>
                 </div>
             </div>
-			<div id="tg-pickedbyauthorslider" class="tg-pickedbyauthor tg-pickedbyauthorslider owl-carousel">
-				@foreach (BookLibrary.Models.Product product in productsPickByAuthours)
-				{
-					<div class="item">
-						<div class="tg-postbook">
-							<figure class="tg-featureimg">
-								<div class="tg-bookimg">
-									<div class="tg-frontcover"><img src="~/Content/Images/books/@product.Image" alt="image description"></div>
-								</div>
-								<div class="tg-hovercontent">
-									<div class="tg-description">
-										<p>Consectetur adipisicing elit sed do eiusmod tempor incididunt labore toloregna aliqua enim adia minim veniam, quis nostrud.</p>
-									</div>
-									<strong class="tg-bookpage">Book Pages: 206</strong>
-									<strong class="tg-bookcategory">Category: Adventure, Fun</strong>
-									<strong class="tg-bookprice">Price: $@product.Price</strong>
-									<div class="tg-ratingbox"><span class="tg-stars"><span></span></span></div>
-								</div>
-							</figure>
-							<div class="tg-postbookcontent">
-								<div class="tg-booktitle">
-									<h3><a href="javascript:void(0);">@product.Name</a></h3>
-								</div>
-								<span class="tg-bookwriter">By: <a href="javascript:void(0);">Sunshine Orlando</a></span>
-								<a class="tg-btn tg-btnstyletwo" href="@Url.Action("AddCart","ShoppingCart", new {@BookID = product.ID, @strURL = Request.Url.ToString()})">
-									<i class="fa fa-shopping-basket"></i>
-									<em>Add To Cart</em>
-								</a>
-							</div>
-						</div>
-					</div>
-				}
-			</div>
         </div>
-    </div>
-</section>
+    }
+</div>
 <!--************************************
         Picked By Author End
 *************************************-->

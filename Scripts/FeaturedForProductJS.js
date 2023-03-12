@@ -1,9 +1,10 @@
 ﻿window.onload = () => {
     var bookPriceElement = document.querySelector(".tg-bookprice ins");
     var bookTitleElement = document.querySelector(".tg-booktitle h3 a");
-    var btnElementElement = document.querySelector(".tg-featureditm .tg-btn");
+    var btnElementElement = document.querySelector(".tg-priceandbtn .tg-btn");
     var bookWriterElement = document.querySelector(".tg-bookwriter a");
     var figureElement = document.querySelector("figure > img");
+
 
     fetch("/Featured/GetFeatured", {
         "headers": {
@@ -28,17 +29,18 @@
             const parser = new DOMParser();
             const newDocument = parser.parseFromString(html, 'text/html');
 
+            var id = newDocument.querySelector(".tg-bglight").getAttribute("book-id");
             var figureElementNew = newDocument.querySelector(".tg-featureditm figure img");
             var bookTitleElementNew = newDocument.querySelector(".tg-featureditm .tg-booktitle a");
             var bookPriceElementNew = newDocument.querySelector(".tg-featureditm .tg-bookprice ins");
             var bookWriterElementNew = newDocument.querySelector(".tg-bookwriter a");
-            var btnElementNew = newDocument.querySelector(".tg-featureditm .tg-btn");
+            var btnElementNew = newDocument.querySelector(".tg-btn");
 
             figureElement.innerHTML = figureElementNew.innerHTML;
             bookPriceElement.innerHTML = bookPriceElementNew.innerHTML;
             bookTitleElement.innerHTML = bookTitleElementNew.innerHTML;
             bookWriterElement.innerHTML = bookWriterElementNew.innerHTML;
-            btnElementElement.innerHTML = btnElementNew.innerHTML;
+            btnElementElement.setAttribute("href", "/ShoppingCart/AddCart?BookID=" + id + "&strURL=" + window.location.href);
         });
     })
 }

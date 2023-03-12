@@ -2,6 +2,7 @@
 using System;
 using System.Linq;
 using System.Web.Mvc;
+using System.Data.Entity;
 
 namespace BookLibrary.Controllers
 {
@@ -26,6 +27,7 @@ namespace BookLibrary.Controllers
         [ChildActionOnly]
         public ActionResult AllCategory()
         {
+            
             return PartialView("_getAllCategory", db.Categories);
         }
 
@@ -41,5 +43,6 @@ namespace BookLibrary.Controllers
             var proCategory = ProductsModel.list_ProductFormCategory(id);
             return View(proCategory);
         }
+       
     }
 }

@@ -39,7 +39,7 @@
 								<div class="tg-booktitle">
 									<h3><a href="javascript:void(0);">@product.Name</a></h3>
 								</div>
-								<span class="tg-bookwriter">By: <a href="javascript:void(0);">Angela Gunning</a></span>
+								<span class="tg-bookwriter">By: <a href="javascript:void(0);">@AuthorModel.getAuthor(product.AuthorID).Name</a></span>
 								<span class="tg-stars"><span></span></span>
 								<span class="tg-bookprice">
 									<ins>$@product.Price</ins>

@@ -47,7 +47,11 @@ p {
 	line-height: 20px;
 	letter-spacing: normal;
 }
-a { text-decoration: none; }
+
+a {
+	text-decoration: none;
+}
+
 a:hover, a:focus, a:active {
 	outline: none;
 	text-decoration: none;

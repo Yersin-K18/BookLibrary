@@ -1,11 +1,62 @@
 @using BookLibrary.Models
 @model List<Product>
 @{
-	ViewBag.Title = "Index";
-	Layout = "~/Views/Shared/_LayoutProducts.cshtml";
-	int total = ProductsModel.NumberBook();
-	string tam = "";
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutProducts.cshtml";
+    int total = ProductsModel.NumberBook();
 }
+
+<style>
+    .next-btn {
+        align-self: center;
+        background-color: transparent;
+        border-radius: 25px;
+        border-style: solid;
+        border-width: 2px;
+        box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+        box-sizing: border-box;
+        color: #77b748;
+        cursor: pointer;
+        outline: none;
+        padding: 6px 12px;
+        text-decoration: none;
+        transition: all 230ms ease-in-out;
+    }
+
+    .next-btn:hover {
+        box-shadow: rgba(0, 0, 0, .2) 2px 8px 8px -5px;
+        transform: translate3d(0, 2px, 0);
+    }
+
+    .next-btn:focus {
+        box-shadow: rgba(0, 0, 0, .2) 2px 8px 4px -6px;
+    }
+
+    .pre-btn {
+        align-self: center;
+        background-color: transparent;
+        border-radius: 25px;
+        border-style: solid;
+        border-width: 2px;
+        box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+        box-sizing: border-box;
+        color: #77b748;
+        cursor: pointer;
+        outline: none;
+        padding: 6px 12px;
+        text-decoration: none;
+        transition: all 230ms ease-in-out;
+    }
+
+    .pre-btn:hover {
+        box-shadow: rgba(0, 0, 0, .2) 2px 8px 8px -5px;
+        transform: translate3d(0, 2px, 0);
+    }
+
+    .pre-btn:focus {
+        box-shadow: rgba(0, 0, 0, .2) 2px 8px 4px -6px;
+    }
+</style>
 
 <div class="col-xs-12 col-sm-8 col-md-8 col-lg-9 pull-right">
 	<div id="tg-content" class="tg-content">
@@ -97,15 +148,16 @@
 				}
 				@if (ViewBag.PageNumber > 1)
 				{
-					@Html.ActionLink("<< Previous Page", "Index", new { page = ViewBag.PageNumber - 1 })
+                     <button class="pre-btn">@Html.ActionLink("<< Previous Page", "Index", new { page = ViewBag.PageNumber - 1 })</button>
 				}
 				@if (ViewBag.PageNumber < ViewBag.TotalPages)
 				{
-					@Html.ActionLink("Next Page >>", "Index", new { page = ViewBag.PageNumber + 1 })
+                    <button class="next-btn">@Html.ActionLink("Next Page >>", "Index", new { page = ViewBag.PageNumber + 1 })</button>
 				}
 			</div>
 		</div>
 	</div>
+                   
+                    
 </div>
 
-<script src="~/Scripts/FeaturedForProductJS.js"></script>

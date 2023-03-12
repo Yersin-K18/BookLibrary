@@ -1,9 +1,9 @@
 ﻿@using BookLibrary.Models
-    @{
-        ViewBag.Title = "Dashboard";
-        Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
-        string name = ((User)Session["user"]).FullName;
-    }
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    string name = ((User)Session["user"]).FullName;
+}
 <!-- Wrapper Start -->
 <div class="container-fluid">
     <div class="row">

@@ -21,6 +21,8 @@
         padding: 6px 12px;
         text-decoration: none;
         transition: all 230ms ease-in-out;
+        display: block;
+        margin: 0 auto;
     }
 
     .next-btn:hover {
@@ -46,6 +48,8 @@
         padding: 6px 12px;
         text-decoration: none;
         transition: all 230ms ease-in-out;
+        display: block;
+        margin: 0 auto;
     }
 
     .pre-btn:hover {
@@ -135,15 +139,15 @@
                         </div>
                     </div>
                 }
-                @if (ViewBag.PageNumber > 1)
-                {
-                    <button class="pre-btn">@Html.ActionLink("<< Previous Page", "Index", new { page = ViewBag.PageNumber - 1 })</button>
-                }
-                @if (ViewBag.PageNumber < ViewBag.TotalPages)
-                {
-                    <button class="next-btn">@Html.ActionLink("Next Page >>", "Index", new { page = ViewBag.PageNumber + 1 })</button>
-                }
             </div>
+            @if (ViewBag.PageNumber > 1)
+            {
+                <button class="pre-btn">@Html.ActionLink("<< Previous Page", "Index", new { page = ViewBag.PageNumber - 1 })</button>
+            }
+            @if (ViewBag.PageNumber < ViewBag.TotalPages)
+            {
+                <button class="next-btn">@Html.ActionLink("Next Page >>", "Index", new { page = ViewBag.PageNumber + 1 })</button>
+            }
         </div>
     </div>
 </div>

@@ -36,5 +36,10 @@ namespace BookLibrary.Controllers
             pageSize = _pageSize;
             return;
         }
+        public ActionResult ListProductFromCategory(int id)
+        {
+            var proCategory = ProductsModel.list_ProductFormCategory(id);
+            return View(proCategory);
+        }
     }
 }

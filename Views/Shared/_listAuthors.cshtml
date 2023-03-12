@@ -6,9 +6,9 @@
 {
     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
         <div class="tg-author">
-            <figure><a href="javascript:void(0);"><img src="/Content/Images/author/@ItemAuthor.Image" alt="image description"></a></figure>
+            <figure><a href="@Url.Action("BooksAccordingAuthor","AuthorDetail", new {id = ItemAuthor.id})"><img src="/Content/Images/author/@ItemAuthor.Image" alt="image description"></a></figure>
             <div class="tg-authorcontent">
-                <h2><a href="javascript:void(0);" >@ItemAuthor.Name</a></h2>
+                <h2><a href="@Url.Action("BooksAccordingAuthor","AuthorDetail", new {id = ItemAuthor.id})">@ItemAuthor.Name</a></h2>
                 <span>@ItemAuthor.BooksPublished Published Books</span>
                 <ul class="tg-socialicons">
                     <li class="tg-facebook"><a href="javascript:void(0);"><i class="fa fa-facebook"></i></a></li>

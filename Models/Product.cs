@@ -23,6 +23,5 @@ namespace BookLibrary.Models
         public string Image { get; set; }
         public Nullable<int> AuthorID { get; set; }
         public Nullable<int> Quantity { get; set; }
-        
     }
 }

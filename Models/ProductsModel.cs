@@ -31,5 +31,10 @@ namespace BookLibrary.Models
                     .ToList();
             return result;
         }
+        static public Product GetFeatured()
+        {
+            return db.Products
+                   .OrderByDescending(p => p.Quantity).First();
+        }
     }
 }

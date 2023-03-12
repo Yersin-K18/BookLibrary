@@ -1,6 +1,7 @@
 ﻿@model IEnumerable<BookLibrary.Models.Category>
-
-
+@{
+    Layout = "~/Views/Shared/_LayoutProducts.cshtml";
+}
 <div class="tg-widget tg-catagories">
     <div class="tg-widgettitle">
         <h3>Category</h3>
@@ -16,6 +17,7 @@
                     </a>
                 </li>
             }
+            <li><a href="javascript:void(0);"><span>Xem Thêm</span></a></li>
         </ul>
     </div>
 </div>

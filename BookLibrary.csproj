@@ -3043,7 +3043,6 @@
     <Content Include="Views\Shared\_Search.cshtml" />
     <Content Include="Views\Search\_PreView.cshtml" />
     <Content Include="Views\Search\Index.cshtml" />
-    <Content Include="Views\Product\ListProductFromCategory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -81,7 +81,11 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-							<strong class="tg-logo"><a href="~/Views/Home/Index.cshtml"><img src="Content/images/logo.png" alt="company name here"></a></strong>
+							<strong class="tg-logo">
+                                <a href="@Url.Action("GotoIndex", "Home")">
+                                    <img src="/Content/Images/logo.png" alt="company name here">
+								</a>
+							</strong>
                             <div class="tg-wishlistandcart">
                                 <div class="dropdown tg-themedropdown tg-wishlistdropdown">
                                     <a href="javascript:void(0);" id="tg-wishlisst" class="tg-btnthemedropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -171,7 +175,7 @@
                                                 <li><a href="javascript:void(0);"><span>Fiction</span><em>18465</em></a></li>
                                                 <li><a href="javascript:void(0);"><span>Fod &amp; Drink</span><em>3148</em></a></li>
                                                 <li><a href="javascript:void(0);"><span>Graphic, Anime &amp; Manga</span><em>77531</em></a></li>
-                                                <li class="load-more" style="padding:0px"><span>Xem thêm</span></a></li>
+                                                <li class="load-more" style="padding:0px"><span>Xem thêm</span></li>
                                                 <li><a href="javascript:void(0);"><span>Emotional</span><em>11234</em></a></li>
                                                 <li><a href="javascript:void(0);"><span>Supernatural</span><em>5247</em></a></li>
                                                 <li><a href="javascript:void(0);"><span>Detective</span><em>924</em></a></li>

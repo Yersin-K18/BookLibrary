@@ -33,7 +33,7 @@ namespace BookLibrary.Controllers
             
             if (matKhau != retypeMatKhau)
             {
-                ViewBag.ThongBao = "Mật khẩu nhập lại không khớp";
+                ViewBag.ThongBao = "Re-entered password does not match!";
             }
 
             // kiểm tra các ràng buộc của User
@@ -82,7 +82,7 @@ namespace BookLibrary.Controllers
             User user = UserModel.VerifyCredentials(Username_or_Email, Password);
             if (user == null)
             {
-                ViewBag.Error = "Invalid email or password";
+                ViewBag.Error = "Email or password is invalid!";
                 return View();
             }
             Session["user"] = user;

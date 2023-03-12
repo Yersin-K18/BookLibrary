@@ -31,6 +31,13 @@ namespace BookLibrary.Models
                     .ToList();
             return result;
         }
+        public static List<Product> list_ProductFormCategory(int id)
+        {
+            var query = from pro in db.Products
+                        where pro.CategorieID == id
+                        select pro;
+            return query.ToList();
+        }
         static public Product GetFeatured()
         {
             return db.Products

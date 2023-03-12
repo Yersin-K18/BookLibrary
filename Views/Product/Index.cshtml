@@ -4,6 +4,7 @@
 	ViewBag.Title = "Index";
 	Layout = "~/Views/Shared/_LayoutProducts.cshtml";
 	int total = ProductsModel.NumberBook();
+	string tam = "";
 }
 
 <div class="col-xs-12 col-sm-8 col-md-8 col-lg-9 pull-right">
@@ -37,7 +38,17 @@
 								</ul>
 								<div class="tg-themetagbox"><span class="tg-themetag">sale</span></div>
 								<div class="tg-booktitle">
-									<h3><a href="javascript:void(0);">@product.Name</a></h3>
+                                    <div class="tg-booktitle">
+                                        <h3>
+                                            <a href="@Url.Action("Index", "ProductDetail", new {product.ID})">
+                                                @if (product.Name.Length > 25)
+                                                { tam = product.Name.Substring(0, 25) + "..."; }
+                                                else
+                                                { tam = product.Name; }
+                                                @tam
+                                            </a>
+                                        </h3>
+                                    </div>
 								</div>
 								<span class="tg-bookwriter">By: <a href="javascript:void(0);">Angela Gunning</a></span>
 								<span class="tg-stars"><span></span></span>

@@ -16,16 +16,16 @@
     <div class="container">
         <h4 style="color: red; text-align: center">@ViewBag.ThongBao</h4>
         <div class="title-text">
-            <div class="title login">Đăng Nhập</div>
-            <div class="title signup">Đăng Ký</div>
+            <div class="title login">Log in</div>
+            <div class="title signup">Sign up</div>
         </div>
         <div class="form-container">
             <div class="slide-controls">
                 <input type="radio" name="slide" id="login" checked>
                 <input type="radio" name="slide" id="signup">
     
-                <a href="@Url.Action("DangNhap")" for="login" class="slide login" style="text-decoration: none;">Đăng Nhập</a>
-                <a href="@Url.Action("DangKy")" for="signup" class="slide signup" style="text-decoration: none;">Đăng Ký</a>
+                <a href="@Url.Action("DangNhap")" for="login" class="slide login" style="text-decoration: none;">Log in</a>
+                <a href="@Url.Action("DangKy")" for="signup" class="slide signup" style="text-decoration: none;">Sign up</a>
                 <div class="slider-tab"></div>
             </div>
             <div class="form-inner">
@@ -33,27 +33,29 @@
                 {
                     @Html.ValidationSummary(true)
                     <form action="#" class="login">
-
                         <div class="field">
                             @Html.TextBox("Username_or_Email", null, new { placeholder = "Email", required = true })
                         </div>
+
                         <div class="field">
-                            @Html.Password("Password", null, new { placeholder = "Mật Khẩu", required = true })
+                            @Html.Password("Password", null, new { placeholder = "Password", required = true })
                         </div>
+
                         <div class="pass-link">
-                            <a href="#">Quên Mật Khẩu?</a>
+                            <a href="#">Forgot password?</a>
                         </div>
+
                         <div class="field btn">
                             <div class="btn-layer"></div>
-                            <input type="submit" value="Đăng Nhập">
+                            <input type="submit" value="Log in">
                         </div>
+
                         <div class="signup-link">
-                            Chưa Có Tài Khoản? <a href="@Url.Action("DangKy")" for="signup" class="slide signup" style="text-decoration: none;"> Đăng Ký Ngay</a>
+                            Don't have an account? <a href="@Url.Action("DangKy")" for="signup" class="slide signup"> Sign up now</a>
                         </div>
-                       
                     </form>
                 }
-                </div>
+            </div>
         </div>
     </div>
     <script src="~/Content/js/LoginAndRegister.js"></script>

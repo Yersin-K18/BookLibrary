@@ -3047,8 +3047,6 @@
     <Content Include="Views\Search\Index.cshtml" />
     <Content Include="Views\Shared\_Featured.cshtml" />
     <Content Include="Views\Product\ListProductFromCategory.cshtml" />
-    <Content Include="Views\AuthorDetail\BooksAccordingAuthor.cshtml" />
-    <Content Include="Views\Shared\_listAuthors.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

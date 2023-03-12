@@ -13,10 +13,5 @@ namespace BookLibrary.Models
                              .Take(Number)
                              .ToList();
         }
-        static public Author getAuthor(int? id)
-        {
-            
-            return db.Authors.Find(id);
-        }
     }
 }

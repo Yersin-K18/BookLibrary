@@ -81,13 +81,13 @@
                                                 </figure>
                                                 <div class="tg-postbookcontent">
                                                     <ul class="tg-bookscategories">
-                                                        <li><a href="javascript:void(0);">Art &amp; Photography</a></li>
+                                                        <li><a href="@Url.Action("ListProductFromCategory", "Product", new { id = book.CategorieID })">@CategoryModel.GetCategory(book.CategorieID).Name</a></li>
                                                     </ul>
                                                     <div class="tg-themetagbox"><span class="tg-themetag">sale</span></div>
                                                     <div class="tg-booktitle">
                                                         <h3><a href="javascript:void(0);">@book.Name</a></h3>
                                                     </div>
-                                                    <span class="tg-bookwriter">By: <a href="javascript:void(0);">@AuthorModel.getAuthor(book.AuthorID).Name</a></span>
+                                                    <span class="tg-bookwriter">By: <a href="@Url.Action("BooksAccordingAuthor","AuthorDetail", new {id = book.AuthorID})">@AuthorModel.getAuthor(book.AuthorID).Name</a></span>
                                                     <span class="tg-stars"><span></span></span>
                                                     <span class="tg-bookprice">
                                                         <ins>$@book.Price</ins>

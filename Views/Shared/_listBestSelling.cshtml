@@ -38,7 +38,7 @@
                                     </a>
                                 </h3>
                             </div>
-                            <span class="tg-bookwriter">By: <a href="javascript:void(0);">@AuthorModel.getAuthor(itemBSL.AuthorID).Name</a></span>
+                            <span class="tg-bookwriter">By: <a href="@Url.Action("BooksAccordingAuthor","AuthorDetail", new {id = itemBSL.AuthorID})">@AuthorModel.getAuthor(itemBSL.AuthorID).Name</a></span>
                             <span class="tg-stars"><span></span></span>
                             <span class="tg-bookprice">
                                 <ins>$@itemBSL.Price</ins>

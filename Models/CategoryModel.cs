@@ -11,5 +11,9 @@ namespace BookLibrary.Models
         {
             return database.Categories.ToList();
         }
+        public static Category GetCategory(int? id) 
+        {
+            return database.Categories.Find(id);
+        }
     }
 }

@@ -27,7 +27,6 @@ namespace BookLibrary.Controllers
         [ChildActionOnly]
         public ActionResult AllCategory()
         {
-
             return PartialView("_getAllCategory", db.Categories);
         }
         [ChildActionOnly]

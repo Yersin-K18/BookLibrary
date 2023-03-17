@@ -15,7 +15,6 @@ namespace BookLibrary.Models
         }
         static public Author getAuthor(int? id)
         {
-            
             return db.Authors.Find(id);
         }
     }

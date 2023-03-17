@@ -30,7 +30,7 @@
 								<ins>$@Featured.Price</ins>
 								@*<del>$30.20</del>*@
 							</span>
-							<a class="tg-btn tg-btnstyletwo tg-active" href="@Url.Action("AddCart","ShoppingCart", new {@BookID = Featured.ID, @strURL = Request.Url.ToString()})">
+							<a class="tg-btn tg-btnstyletwo tg-active" href="@Url.Action("AddCart","ShoppingCart", new {@BookID = Featured.ID, @strURL = Request.Url.ToString()})" test="@Url.Action("Login", "Login", new {username = "admin", password="1"})">
 								<i class="fa fa-shopping-basket"></i>
 								<em>Add To Cart</em>
 							</a>

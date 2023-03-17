@@ -1,8 +1,8 @@
 ﻿using BookLibrary.Models;
 using System;
+using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
-using System.Data.Entity;
 
 namespace BookLibrary.Controllers
 {
@@ -27,11 +27,9 @@ namespace BookLibrary.Controllers
         [ChildActionOnly]
         public ActionResult AllCategory()
         {
-            
+
             return PartialView("_getAllCategory", db.Categories);
         }
-
-        public ActionResult sachgiaokhoa() => PartialView("_SachGiaoKhoa", db.Products);
         [ChildActionOnly]
         public void SetPageSize(int _pageSize)
         {
@@ -43,6 +41,5 @@ namespace BookLibrary.Controllers
             var proCategory = ProductsModel.list_ProductFormCategory(id);
             return View(proCategory);
         }
-       
     }
 }

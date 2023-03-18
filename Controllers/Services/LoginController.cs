@@ -10,30 +10,23 @@ namespace BookLibrary.Controllers.Services
         public JsonResult Login(String username, string password)
         {
             User user = UserModel.VerifyCredentials(username, password);
-            JsonResult response;
             if (user is null)
             {
-                response = new JsonResult()
+                return Json(new
                 {
-                    Data = new
-                    {
-                        message = "Failure",
-                        token = ""
-                    }
-                };
+                    message = "Failure",
+                    token = ""
+                });
             }
             else
             {
-                response = new JsonResult()
+                return Json(new
                 {
-                    Data = new
-                    {
-                        message = "Success",
-                        token = ""
-                    }
-                };
+                    message = "Success",
+                    token = ""
+                });
             }
-            return response;
+
         }
         // fetch("/Login/Login?username=admin&password=1", { "method": "POST"})
         // .then(res => res.json())

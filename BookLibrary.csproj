@@ -179,6 +179,7 @@
     <Compile Include="Controllers\ProductDetailController.cs" />
     <Compile Include="Controllers\Services\FeaturedController.cs" />
     <Compile Include="Controllers\Services\LoginController.cs" />
+    <Compile Include="Controllers\Services\RegisterController.cs" />
     <Compile Include="Controllers\Services\SearchController.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Controllers\WishListController.cs" />

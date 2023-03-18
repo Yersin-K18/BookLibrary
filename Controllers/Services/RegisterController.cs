@@ -4,14 +4,14 @@ using System.Web.Mvc;
 
 namespace BookLibrary.Controllers.Services
 {
-    public class LoginController : Controller
+    public class RegisterController : Controller
     {
         [HttpPost]
-        public JsonResult Login(String username, string password)
+        public JsonResult Register(String username, string password)
         {
-            User user = UserModel.VerifyCredentials(username, password);
             JsonResult response;
-            if (user is null)
+            bool check = UserModel.IsAvailable(username, "");
+            if (check is false)
             {
                 response = new JsonResult()
                 {
@@ -24,6 +24,7 @@ namespace BookLibrary.Controllers.Services
             }
             else
             {
+                UserModel.AddNewUser(username, password);
                 response = new JsonResult()
                 {
                     Data = new
@@ -35,8 +36,5 @@ namespace BookLibrary.Controllers.Services
             }
             return response;
         }
-        // fetch("/Login/Login?username=admin&password=1", { "method": "POST"})
-        // .then(res => res.json())
-        // .then(res => console.log(res))
     }
 }

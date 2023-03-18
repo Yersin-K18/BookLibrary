@@ -40,5 +40,26 @@ namespace BookLibrary.Models
         {
             return db.Users.Count() + 1;
         }
+        static public bool IsAvailable(string username, string email)
+        {
+            User temp = db.Users
+                .Where(item => item.username == username || item.Email == email)
+                .FirstOrDefault();
+            if (temp is null)
+            {
+                return true;
+            }
+            return false;
+        }
+        static public void AddNewUser(string username, string password)
+        {
+            db.Users.Add(new User()
+            {
+                id = GetIDUser(),
+                username = username,
+                password = password
+            });
+            db.SaveChanges();
+        }
     }
 }

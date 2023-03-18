@@ -10,6 +10,12 @@ namespace BookLibrary
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "Register",
+                url: "Register",
+                defaults: new { controller = "Register", action = "Register" }
+            );
+
+            routes.MapRoute(
                 name: "Login",
                 url: "Login",
                 defaults: new { controller = "Login", action = "Login" }

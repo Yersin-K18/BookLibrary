@@ -18,13 +18,13 @@ namespace BookLibrary.Models
             {
                 user = db.Users
                         .Where(item => item.username == username)
-                        .First();
+                        .FirstOrDefault();
             }
             else
             {
                 user = db.Users
                         .Where(item => item.Email == username)
-                        .First();
+                        .FirstOrDefault();
             }
 
             if (user == null) return null;
